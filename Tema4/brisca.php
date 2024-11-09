@@ -91,7 +91,7 @@ function jugarBaza(&$jugadores, &$baraja, $cartaTriunfo, $ruta) {
     }
 }
 
-// Simulación de todas las bazas hasta que no queden cartas en la baraja
+// Simulamos jugar todas las bazas hasta que no queden cartas en la baraja
 $baza = 1;
 while (!empty($baraja)) {
     echo "<br><strong>Baza $baza</strong><br>";
@@ -102,6 +102,22 @@ while (!empty($baraja)) {
     $baza++;
 }
 
-//Le añadimos al jugador que tiene menos cartas la carta de la mesa 
-echo count(['Jugador 1']);
-echo count(['Jugador 2']); 
+//Le añadimos al jugador 2 la carta triunfo 
+echo "<br> <br>";
+$jugadores['Jugador 2'][2] = $cartaTriunfo;
+foreach ($jugadores as $nombre => $cartas) {
+    mostrarCartasJugador($cartas, $nombre, $rutaImagenes);
+}
+
+//Juego las 3 últimas bazas y muestro las cartas 
+for ($i=0; $i < 3; $i++) { 
+    echo "<br><strong>Baza $baza</strong><br>";
+    jugarBaza($jugadores, $baraja, $cartaTriunfo,$rutaImagenes);
+    foreach ($jugadores as $nombre => $cartas) {
+        mostrarCartasJugador($cartas, $nombre, $rutaImagenes);
+    }
+    $baza++;
+}
+
+
+?>

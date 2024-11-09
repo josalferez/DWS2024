@@ -1,0 +1,30 @@
+   <?php
+     require_once "Models/Carta.php";
+     require_once "Models/BarajaESP.php";
+     use Models\Carta;
+     use Models\BarajaESP;
+
+     $palo = "OROS";
+     $numero = 20;
+
+    if(CARTA::comprobarNumero($numero)&& CARTA::comprobarPalo($palo)){
+        $algunaCarta = new Carta($numero, $palo);
+        echo $algunaCarta;
+    }else{
+        echo "!No existe la carta!";
+    }
+
+    $baraja = new BarajaESP();
+    echo "<pre>";
+    var_dump($baraja);
+    echo "</pre>";
+    echo "SEPARACIÓN";
+    echo "<br/>";
+
+   $baraja->extraerCarta();
+   echo "<pre>";
+   var_dump($baraja);
+   echo "</pre>";
+
+
+?>
