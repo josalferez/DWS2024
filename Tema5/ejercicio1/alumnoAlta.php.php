@@ -10,7 +10,7 @@
     <p>Crea un formulario con el siguientes aspecto:</p>
     <h2>Alta alumno:</h2>
 
-    <form method="post" action="alumnoAñadido.php">
+    <form method="post" action="alumnoAnadido.php">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre"><br><br>
 
