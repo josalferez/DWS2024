@@ -98,6 +98,7 @@ function jugarBaza(&$jugadores, &$baraja, $cartaTriunfo, $ruta) {
             $ganador = $jugada;
         }
     }
+    // Esto es una prueba para gitHub --> no sirve nada
 
     echo "Ganador de la baza: {$ganador['jugador']} con la carta ";
     mostrarCarta($ganador['carta'], $ruta);
