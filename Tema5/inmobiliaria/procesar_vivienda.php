@@ -15,6 +15,8 @@ function calcular_beneficio($zona, $tamano, $precio) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Generar un ID único para la vivienda
     $idVivienda = uniqid('vivienda_');
+    $idVivienda2 = date("Ymd");
+    echo $idVivienda2 . "";
 
     $tipo = $_POST['tipo'] ?? '';
     $zona = $_POST['zona'] ?? '';
@@ -29,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $rutaFoto = "No se subió ninguna foto.";
     if (isset($_FILES['foto']) && $_FILES['foto']['size'] > 0) {
         if ($_FILES['foto']['size'] > 1000 * 1024) {
-            die("El tamaño de la foto excede el límite de 100 KB.");
+            die("El tamaño de la foto excede el límite de 100 MB.");
         }
         $carpetaFotos = 'fotos/';
         if (!file_exists($carpetaFotos)) {

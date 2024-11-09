@@ -50,7 +50,7 @@
         <input type="checkbox" name="extras[]" value="Garaje"> Garaje
         <br>
 
-        <label for="foto">Foto (máx 100KB):</label>
+        <label for="foto">Foto (máx 100MB):</label>
         <input type="file" name="foto" id="foto" accept="image/*">
         <br>
 
