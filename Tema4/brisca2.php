@@ -200,6 +200,7 @@
             mostrarCartasJugador($cartas, $nombre, $rutaImagenes);
         }
         $baza++;
+        //Actualizando GITHUB
     }
        
     //Juego las 3 últimas bazas y muestro las cartas 
