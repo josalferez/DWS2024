@@ -211,6 +211,7 @@
             mostrarCartasJugador($cartas, $nombre, $rutaImagenes);
         }
         $baza++;
+        // Hola
     }
     
     ?>
