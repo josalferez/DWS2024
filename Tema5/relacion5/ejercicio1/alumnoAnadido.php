@@ -40,8 +40,8 @@
         echo "<p>No se ha enviado ningún dato.</p>";
     }
     ?>
-
+    
     <br>
-    <a href="altaAlumno.php">Volver al formulario de alta</a>
+    <a href="alumnoAlta.php">Volver al formulario de alta</a>
 </body>
 </html>

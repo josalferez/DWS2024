@@ -1,0 +1,4 @@
+Piso, Centro, FGL,31, 3, 250000, 100, Piscina, Jardín, Garaje, nada, fotos/2024-09-30_21-09-50_0_clean.jpg, 75000
+Piso, Centro, FGL,31, 3, 250000, 100, Piscina, Jardín, Garaje, nada, fotos/2024-09-30_21-09-50_0_clean.jpg, 75000
+Piso, Centro, FGL,31, 3, 250000, 100, Piscina, Jardín, Garaje, nada, fotos/2024-09-30_21-09-50_0_clean.jpg, 75000
+vivienda_672f38a6affe8, Piso, Centro, FGL,31, 2, 250000, 100, Piscina, Jardín, Garaje, aa, fotos/vivienda_672f38a6affe8_2024-09-30_21-09-50_0_clean.jpg, 75000
