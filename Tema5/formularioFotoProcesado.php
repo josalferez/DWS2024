@@ -29,6 +29,7 @@
         }
         
         $nombreCompleto = $nombreDirectorio . $nombreFichero;
+        // Si el fichero existe le cambio el nombre
         if (is_file($nombreCompleto)) {
             $idUnico = time();
             $nombreFichero = $idUnico . "-" . $nombreFichero;
