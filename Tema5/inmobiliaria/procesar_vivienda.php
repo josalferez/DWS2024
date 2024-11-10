@@ -111,8 +111,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-
-
 <br>
 <h3>
 <a href="inmobiliaria.php">Volver al formulario de alta</a>
