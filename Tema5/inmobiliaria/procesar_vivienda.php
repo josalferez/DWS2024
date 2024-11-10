@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Validar y procesar fotos
     $rutaFotos = [];
-    if (isset($_FILES['foto']) && is_array($_FILES['foto']['name'])) {
+    if (isset($_FILES['foto']) && count($_FILES['foto']['name']) > 0) {
         $carpetaFotos = 'fotos/';
         if (!file_exists($carpetaFotos)) {
             mkdir($carpetaFotos);
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Iterar a través de un máximo de 5 fotos
         for ($i = 0; $i < min(5, count($_FILES['foto']['name'])); $i++) {
-            if ($_FILES['foto']['size'][$i] > 1000 * 1024) {
+            if ($_FILES['foto']['size'][$i] > 100 * 1024) {
                 echo "La foto " . ($i + 1) . " excede el límite de 100 KB y no se ha subido.<br>";
                 continue;
             }
@@ -67,10 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo "Error al subir la foto " . ($i + 1) . ".<br>";
             }
         }
-    } else {
-        echo "No se han subido fotos válidas.<br>";
     }
-
 
     // Calcular beneficio
     function calcular_beneficio($zona, $tamano, $precio) {
