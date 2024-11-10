@@ -2,3 +2,7 @@ Piso, Centro, FGL,31, 3, 250000, 100, Piscina, Jardín, Garaje, nada, fotos/2024
 Piso, Centro, FGL,31, 3, 250000, 100, Piscina, Jardín, Garaje, nada, fotos/2024-09-30_21-09-50_0_clean.jpg, 75000
 Piso, Centro, FGL,31, 3, 250000, 100, Piscina, Jardín, Garaje, nada, fotos/2024-09-30_21-09-50_0_clean.jpg, 75000
 vivienda_672f38a6affe8, Piso, Centro, FGL,31, 2, 250000, 100, Piscina, Jardín, Garaje, aa, fotos/vivienda_672f38a6affe8_2024-09-30_21-09-50_0_clean.jpg, 75000
+20241110003, Piso, Centro, FGL,31, 3, 255000, 85, Piscina, Jardín, Garaje, aa, , 76500
+20241110004, Piso, Centro, FGL,31, 2, 334234, 34, Jardín, sf, , 100270.2
+20241110005, Piso, Centro, FGL,31, 2, 150000, 90, Piscina, 25, , 45000
+20241110006, Piso, Centro, FGL,31, 3, 123123, 23, Jardín, aa, , 36936.9
