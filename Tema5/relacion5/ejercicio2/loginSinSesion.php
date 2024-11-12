@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
     <?php
@@ -14,7 +15,6 @@
     if (!isset($_POST['submit'])) {
         // 0. Mostrar el formulario de inicio de sesión
         ?>
-        <p>Introduzca Usuario y Contraseña:</p>
         <form action="loginSinSesion.php" method="post">
             Usuario: <input type="text" name="usuario" placeholder="usuario" required autofocus><br>
             Contraseña: <input type="password" name="password" required><br>
@@ -37,7 +37,8 @@
             <form action="loginSinSesion.php" method="post">
                 Usuario: <input type="text" name="usuario" placeholder="usuario" required autofocus><br>
                 Contraseña: <input type="password" name="password" required><br>
-                <input type="submit" name="submit" value="Iniciar sesión">
+                <!-- <input type="submit" name="submit" value="Iniciar sesión">-->
+                <button> Iniciar Sesion</button>
             </form>
             <?php
         }
