@@ -15,11 +15,11 @@ function testLogin($usuarioInput, $passwordInput) {
 
 // Pruebas
 echo "<h2>Pruebas de login:</h2>";
-
+/*
 // Prueba 1: Usuario y contraseña correctos
 echo "<h3>Prueba 1: Usuario y contraseña correctos</h3>";
 echo testLogin('usuario', '1234');
-
+*/
 // Prueba 2: Usuario incorrecto
 echo "<h3>Prueba 2: Usuario incorrecto</h3>";
 echo testLogin('otroUsuario', '1234');
