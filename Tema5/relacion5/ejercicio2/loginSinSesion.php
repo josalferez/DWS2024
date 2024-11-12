@@ -6,7 +6,7 @@
 </head>
 <body>
     <?php
-    // Usuario y contraseña predeterminados
+    // Usuario y contraseña predeterminados. Modificado desde el IES
     $usuario_valido = "usuario";
     $password_valido = "1234";
 
