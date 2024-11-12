@@ -1,3 +1,6 @@
+[!NOTE]
+Esto es una nota especial
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
