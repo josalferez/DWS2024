@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="./css/estilos.css">
 </head>
 <body>
     <?php
@@ -38,6 +38,7 @@
                 Usuario: <input type="text" name="usuario" placeholder="usuario" required autofocus><br>
                 Contraseña: <input type="password" name="password" required><br>
                 <!-- <input type="submit" name="submit" value="Iniciar sesión">-->
+                 <br> <br>
                 <button> Iniciar Sesion</button>
             </form>
             <?php
