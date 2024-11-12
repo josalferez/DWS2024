@@ -39,7 +39,7 @@
                 Contraseña: <input type="password" name="password" required><br>
                 <!-- <input type="submit" name="submit" value="Iniciar sesión">-->
                  <br> <br>
-                <button> Iniciar Sesion</button>
+                <button> Iniciar Sesion blow</button>
             </form>
             <?php
         }
