@@ -37,6 +37,11 @@ form {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+label{
+    display: inline-block;
+    width: 80px;
+}
+
 button{
     font-size: 12px;
     font-weight: bold;
