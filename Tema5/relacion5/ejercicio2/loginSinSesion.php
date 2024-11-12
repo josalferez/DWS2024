@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="./css/estilos.css">
 </head>
 <body>
     <?php
-    // Usuario y contraseña predeterminados
+    // Usuario y contraseña predeterminados. Modificado desde el IES
     $usuario_valido = "usuario";
     $password_valido = "1234";
 
     // Si el formulario no se ha enviado aún
     if (!isset($_POST['submit'])) {
-        // Mostrar el formulario de inicio de sesión
+        // 0. Mostrar el formulario de inicio de sesión
         ?>
-        <p>Introduzca Usuario y Contraseña:</p>
         <form action="loginSinSesion.php" method="post">
-            Usuario: <input type="text" name="usuario" placeholder="usuario" required autofocus><br>
+            Usuario: <input type="text" name="usuario" placeholder="usuario" required autofocus><br><br>
             Contraseña: <input type="password" name="password" required><br>
-            <input type="submit" name="submit" value="Iniciar sesión">
+           <!-- <input type="submit" name="submit" value="Iniciar sesión">-->
+            <br><br>
+            <button name="submit"> Iniciar Sesion </button>
         </form>
         <?php
     } else {
@@ -35,9 +37,11 @@
             ?>
             <p style="color:red;">Error: Usuario o contraseña incorrectos.</p>
             <form action="loginSinSesion.php" method="post">
-                Usuario: <input type="text" name="usuario" placeholder="usuario" required autofocus><br>
+                Usuario: <input type="text" name="usuario" placeholder="usuario" required autofocus><br><br>
                 Contraseña: <input type="password" name="password" required><br>
-                <input type="submit" name="submit" value="Iniciar sesión">
+                <!-- <input type="submit" name="submit" value="Iniciar sesión">-->
+                 <br> <br>
+                <button name="submit"> Iniciar Sesion </button>
             </form>
             <?php
         }
