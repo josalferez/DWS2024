@@ -12,7 +12,7 @@
 
     // Si el formulario no se ha enviado aún
     if (!isset($_POST['submit'])) {
-        // Mostrar el formulario de inicio de sesión
+        // 0. Mostrar el formulario de inicio de sesión
         ?>
         <p>Introduzca Usuario y Contraseña:</p>
         <form action="loginSinSesion.php" method="post">
