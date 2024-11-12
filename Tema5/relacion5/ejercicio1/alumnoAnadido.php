@@ -10,7 +10,7 @@
     <h1>Información del Alumno Añadido</h1>
 
     <?php
-    // Modifico desde el instituto
+    // 0. Modifico desde el instituto
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // 1. Capturamos los datos enviados desde el formulario
         $nombre = $_POST['nombre'] ?? '';
