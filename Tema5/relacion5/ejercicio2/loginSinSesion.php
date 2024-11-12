@@ -16,9 +16,11 @@
         // 0. Mostrar el formulario de inicio de sesión
         ?>
         <form action="loginSinSesion.php" method="post">
-            Usuario: <input type="text" name="usuario" placeholder="usuario" required autofocus><br>
+            Usuario: <input type="text" name="usuario" placeholder="usuario" required autofocus><br><br>
             Contraseña: <input type="password" name="password" required><br>
-            <input type="submit" name="submit" value="Iniciar sesión">
+           <!-- <input type="submit" name="submit" value="Iniciar sesión">-->
+            <br><br>
+            <button name="submit"> Iniciar Sesion </button>
         </form>
         <?php
     } else {
@@ -35,11 +37,11 @@
             ?>
             <p style="color:red;">Error: Usuario o contraseña incorrectos.</p>
             <form action="loginSinSesion.php" method="post">
-                Usuario: <input type="text" name="usuario" placeholder="usuario" required autofocus><br>
+                Usuario: <input type="text" name="usuario" placeholder="usuario" required autofocus><br><br>
                 Contraseña: <input type="password" name="password" required><br>
                 <!-- <input type="submit" name="submit" value="Iniciar sesión">-->
                  <br> <br>
-                <button> Iniciar Sesion blow</button>
+                <button name="submit"> Iniciar Sesion </button>
             </form>
             <?php
         }

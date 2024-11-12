@@ -26,14 +26,25 @@ button:hover{
 }
 
 */
+
+/* Alinear el formulario al centro */
+form {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 button{
-    font-size: 24px;
+    font-size: 12px;
     font-weight: bold;
     position: relative;
-    padding: 16px 32px;
+    padding: 8px 16px;
     color: #fff;
     border: none;
-    border-radius: 12px;
+    border-radius: 6px;
     background: black;
     cursor: pointer;
 }
