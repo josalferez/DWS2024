@@ -52,6 +52,8 @@ button{
     border-radius: 6px;
     background: black;
     cursor: pointer;
+    display: block; /*Con esta línea y la de abajo centro el botón*/
+    margin: 5px auto; 
 }
 
 button::before{

@@ -13,13 +13,12 @@
 
     // Si el formulario no se ha enviado aún
     if (!isset($_POST['submit'])) {
-        // 0. Mostrar el formulario de inicio de sesión
+        // Mostrar el formulario de inicio de sesión
         ?>
         <form action="loginSinSesion.php" method="post">
             <label> Usuario </label> <input type="text" name="usuario" placeholder="Introduce tu usuario" required autofocus><br><br>
             <label> Contraseña </label> <input type="password" name="password" required><br>
-            <br><br>
-            <button name="submit"> Iniciar Sesion </button>
+            <br><br> <button name="submit"> Iniciar Sesion </button>
         </form>
         <?php
     } else {
@@ -38,8 +37,7 @@
             <form action="loginSinSesion.php" method="post">
                 <label> Usuario </label> <input type="text" name="usuario" placeholder="Introduce tu usuario" required autofocus><br><br>
                 <label> Contraseña </label> <input type="password" name="password" required><br>
-                <br><br>
-                <button name="submit"> Iniciar Sesion </button>
+                <br><br> <button name="submit"> Iniciar Sesion </button>
             </form>
             <?php
         }
