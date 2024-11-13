@@ -1,3 +1,4 @@
+
 <?php
 // Definición de variables y mensajes de error
 $name = $phone = $email = "";
@@ -58,10 +59,11 @@ function test_input($data) {
 <head>
     <meta charset="UTF-8">
     <title>Formulario de Validación</title>
+    <link rel="stylesheet" href="../../css/estilos.css">
 </head>
 <body>
-    <h2>Formulario de Datos de Amigos</h2>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <h2>Datos de Amigos</h2>
         <label for="name">Nombre:</label><br>
         <input type="text" id="name" name="name" value="<?php echo $name; ?>">
         <span style="color:red"><?php echo $nameErr; ?></span><br><br>
@@ -74,7 +76,7 @@ function test_input($data) {
         <input type="text" id="email" name="email" value="<?php echo $email; ?>">
         <span style="color:red"><?php echo $emailErr; ?></span><br><br>
 
-        <input type="submit" value="Enviar">
+        <button>Enviar</button>
     </form>
 </body>
 </html>
