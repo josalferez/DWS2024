@@ -29,7 +29,8 @@ button:hover{
 
 /* Alinear el formulario al centro */
 form {
-    max-width: 300px;
+    /*max-width: 25%; -> Esto adapta el ancho del formulario a un tamaño fijo*/
+    width: max-content; /* -> Este sin embargo se adapta al tamaño del elemento más ancho del formulario*/
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -52,7 +53,7 @@ button{
     border-radius: 6px;
     background: black;
     cursor: pointer;
-    display: block; /*Con esta línea y la de abajo centro el botón*/
+    display: block; /*Con esta línea y la de abajo centro el botón display: flex; tb valdría */
     margin: 5px auto; 
 }
 

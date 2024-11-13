@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/estilos.css">
     <title>Alta Alumno</title>
+
 </head>
 <body>
-    <h1>Ejercicio inicial</h1>
-    <p>Crea un formulario con el siguientes aspecto:</p>
-    <h2>Alta alumno:</h2>
-
     <form method="post" action="alumnoAnadido.php">
+        <h2>Alta alumno:</h2>        
+
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre"><br><br>
 
@@ -48,7 +48,7 @@
         <label for="repite_contrasena">Repita la contraseña:</label>
         <input type="password" id="repite_contrasena" name="repite_contrasena"><br><br>
 
-        <input type="submit" value="Enviar">
+        <button type="submit"> Enviar </button> 
     </form>
 </body>
 </html>
