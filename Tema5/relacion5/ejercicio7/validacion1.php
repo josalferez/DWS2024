@@ -5,7 +5,6 @@ $name = $phone = $email = "";
 $nameErr = $phoneErr = $emailErr = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
     // 1. Validación del nombre
     if (empty($_POST["name"])) {
         $nameErr = "<br><i>El nombre es obligatorio.";
@@ -62,7 +61,7 @@ function test_input($data) {
     <link rel="stylesheet" href="../../css/estilos.css">
 </head>
 <body>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"> 
         <h2>Datos de Amigos</h2>
         <label for="name">Nombre:</label><br>
         <input type="text" id="name" name="name" value="<?php echo $name; ?>">
