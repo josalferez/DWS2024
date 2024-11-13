@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nameErr = "<br><i>El nombre es obligatorio.";
     } else {
         $name = test_input($_POST["name"]);
-        if (!preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]*$/", $name)) {
+        if (!preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]*$/", $name)) { //Dejo minúsculas y mayúsculas, vocales acentuadas ñ y espacio en blanco
             $nameErr = "<br><i>El nombre solo debe contener letras y espacios.";
         }
     }
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $phoneErr = "<br><i>El teléfono es obligatorio.";
     } else {
         $phone = test_input($_POST["phone"]);
-        if (!preg_match("/^[0-9]{9}$/", $phone)) {
+        if (!preg_match("/^[0-9]{9}$/", $phone)) { //9 dígitos numéricos
             $phoneErr = "<br><i>El teléfono debe contener exactamente 9 números.";
         }
     }
@@ -46,10 +46,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Función para limpiar y procesar datos
 function test_input($data) {
-    $data = trim($data);
+    $data = trim($data); //Quitamos los espacio en blanco
     $data = stripslashes($data); // Elimina las barras invertidas
     $data = htmlspecialchars($data); // Convierte caracteres especiales en entidades HTML
-    return $data;
+    
+    return $data; //Devolvemos el string "limpito"
 }
 ?>
 
