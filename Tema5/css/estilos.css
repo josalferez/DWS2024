@@ -11,8 +11,9 @@ form {
 }
 
 label{
-    display: inline-block;
-    width: 80px;
+    display: inline;
+    width: 100px;
+    white-space: nowrap; /* Evita el salto de línea en los label con varias palabras*/ 
 }
 
 button{
@@ -26,7 +27,7 @@ button{
     background: black;
     cursor: pointer;
     display: block; /*Con esta línea y la de abajo centro el botón display: flex; tb valdría */
-    margin: 5px auto; 
+    margin: 20px auto; 
 }
 
 button::before{
@@ -60,4 +61,9 @@ button::before{
         background-position: 0 0;
         
     }
+}
+
+.centered-title { /* La creo para centrar los títulos de los formularios */
+    margin: 0 auto; /* Centro horizontal automático */
+    text-align: center; /* Alineación de texto si hay contenido adicional */
 }
