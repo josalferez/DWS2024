@@ -1,4 +1,1 @@
-Fichero creado con file_put_contents<br>23 234 611 5
-1233 565 123 5
-123 54 757 12
-77 88 9 99
+Fichero creado con file_put_contents
