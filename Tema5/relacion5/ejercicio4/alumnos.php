@@ -12,7 +12,11 @@ function crearArrayAlumnos() {
 // Función para mostrar el array ordenado
 function mostrarAlumnos($alumnos) {
     // Ordenar el array por clave (nombre del alumno)
-    ksort($alumnos);
+    //ksort($alumnos);
+    
+    // Ordenar el array por nota 
+    arsort($alumnos);
+
     echo "<table border='1'>";
     echo "<tr><th>Alumno</th><th>Nota</th></tr>";
     foreach ($alumnos as $nombre => $nota) {
@@ -61,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="text" id="nombre" name="nombre" required>
     <br>
     <label for="nota">Nota:</label>
-    <input type="number" id="nota" name="nota" step="0.1" required>
+    <input type="number" id="nota" name="nota" step="0.1" required> <!-- step solo permite un decimal en las notas -->
     <br><br>
     <input type="submit" value="Añadir Alumno">
 </form>
