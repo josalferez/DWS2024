@@ -16,6 +16,11 @@ label{
     white-space: nowrap; /* Evita el salto de línea en los label con varias palabras*/ 
 }
 
+input {
+    padding: 5px;
+    width: 100%;
+}
+
 button{
     font-size: 12px;
     font-weight: bold;
@@ -67,3 +72,5 @@ button::before{
     margin: 0 auto; /* Centro horizontal automático */
     text-align: center; /* Alineación de texto si hay contenido adicional */
 }
+
+
