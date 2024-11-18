@@ -1,4 +1,3 @@
-
 <?php
 // Definición de variables y mensajes de error
 $name = $phone = $email = "";
@@ -45,24 +44,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // Función para limpiar y procesar datos
-function test_input($data) {
+function test_input($data)
+{
     $data = trim($data); //Quitamos los espacio en blanco
     $data = stripslashes($data); // Elimina las barras invertidas
     $data = htmlspecialchars($data); // Convierte caracteres especiales en entidades HTML
-    
+
     return $data; //Devolvemos el string "limpito"
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Formulario de Validación</title>
     <link rel="stylesheet" href="../../css/estilos.css">
 </head>
+
 <body>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"> 
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <h2>Datos de Amigos</h2>
         <label for="name">Nombre:</label><br>
         <input type="text" id="name" name="name" value="<?php echo $name; ?>">
@@ -79,4 +81,5 @@ function test_input($data) {
         <button>Enviar</button>
     </form>
 </body>
+
 </html>
