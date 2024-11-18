@@ -12,7 +12,11 @@ function crearArrayAlumnos() {
 // Función para mostrar el array ordenado
 function mostrarAlumnos($alumnos) {
     // Ordenar el array por clave (nombre del alumno)
-    ksort($alumnos);
+    //ksort($alumnos);
+    
+    // Ordenar el array por nota 
+    arsort($alumnos);
+
     echo "<table border='1'>";
     echo "<tr><th>Alumno</th><th>Nota</th></tr>";
     foreach ($alumnos as $nombre => $nota) {
@@ -54,14 +58,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mostrarAlumnos($alumnos);
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/estilos.css"> 
+    <title>Document</title>
+</head>
+<body>
+        <!-- Formulario HTML para añadir alumnos -->
+    <form method="post">
+        
+        <label for="nombre">Nombre del Alumno:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br>
+        <label for="nota">Nota:</label>
+        <input type="number" id="nota" name="nota" step="0.1" required> <!-- step solo permite un decimal en las notas -->
+        
+        <br><br>
+        <button>Añadir Alumno</button>
+    </form>
+</body>
+</html>
 
-<!-- Formulario HTML para añadir alumnos -->
-<form method="post">
-    <label for="nombre">Nombre del Alumno:</label>
-    <input type="text" id="nombre" name="nombre" required>
-    <br>
-    <label for="nota">Nota:</label>
-    <input type="number" id="nota" name="nota" step="0.1" required>
-    <br><br>
-    <input type="submit" value="Añadir Alumno">
-</form>
+
