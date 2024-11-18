@@ -66,7 +66,7 @@ function test_input($data) {
         <h2>Datos de Amigos</h2>
         <label for="name">Nombre:</label><br>
         <input type="text" id="name" name="name" value="<?php echo $name; ?>">
-        <span style="color:red"><?php echo $nameErr; ?></span><br><br>
+        <span style="color:red"><?php echo $nameErr; ?></span><br><br> <!-- La etiqueta span le aplica el estilo color rojo a la variable $nameErr-->
 
         <label for="phone">Teléfono:</label><br>
         <input type="text" id="phone" name="phone" value="<?php echo $phone; ?>">
