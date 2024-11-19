@@ -1,8 +1,9 @@
 <?php
 
+
 // Usuarios
 $usuarios = [
-    'usuario1' => [
+    'jdoe' => [
         'contraseña' => '1234',
         'nombre' => 'John',
         'apellido1' => 'Doe',
