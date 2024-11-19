@@ -8,7 +8,6 @@ div {
         #d92e7f 62%,
         #9b36b7 85%,
         #515ecf);
-    );
     border-radius: 30%;
     position: relative;
 }
@@ -49,7 +48,7 @@ span{
     border-radius: 100%;
     width: 0;
     height: 0;
-    right: 7rem;
+    right: 6rem;
     position: absolute;
     margin: auto;
     top: 5rem;    

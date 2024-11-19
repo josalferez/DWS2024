@@ -124,7 +124,7 @@ function test_input($data) {
         <span style="color:red"><?php echo $surnameErr; ?></span><br><br>
 
         <label for="email">Correo:</label><br>
-        <input type="text" id="email" name="email" value="<?php echo $email; ?>">
+        <input type="email" id="email" name="email" value="<?php echo $email; ?>">
         <span style="color:red"><?php echo $emailErr; ?></span><br><br>
 
         <label for="phone">Teléfono:</label><br>
@@ -132,7 +132,7 @@ function test_input($data) {
         <span style="color:red"><?php echo $phoneErr; ?></span><br><br>
 
         <p>Empleo actual:</p>
-        <input type="radio" id="sin_empleo" name="employment" value="sin empleo" <?php if ($employment === "sin empleo") echo "checked"; ?>>
+        <input type="radio" id="sin_empleo" name="employment" value="sin empleo" <?php if ($employment === "sin empleo") echo "checked"; ?>> <!-- Al recargar la página si no pongo este if, entoncentes el radio button se marcaría vacío-->
         <label for="sin_empleo">Sin empleo</label><br>
         <input type="radio" id="media_jornada" name="employment" value="media jornada" <?php if ($employment === "media jornada") echo "checked"; ?>>
         <label for="media_jornada">Media jornada</label><br>
