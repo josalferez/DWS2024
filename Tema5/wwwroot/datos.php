@@ -1,7 +1,7 @@
 <?php
 
 
-// Usuarios
+// 1. Array de usuarios
 $usuarios = [
     'jdoe' => [
         'contraseña' => '1234',
@@ -29,7 +29,7 @@ $usuarios = [
     ]
 ];
 
-// Libros
+// 2. Array de libros
 $libros = [
     '9781234567897' => [
         'unidades' => 5,
@@ -69,7 +69,7 @@ $libros = [
     ]
 ];
 
-// Préstamos
+// 3. Array de Préstamos
 $prestamos = [
     [
         'isbn' => '9781234567897',
@@ -91,7 +91,9 @@ $prestamos = [
     ]
 ];
 
-// Funciones
+// 4. Compruebo que $usu y $pw están en la base de datos usuarios. Si no están lanzo la excepción
+// Si están, lo devuelvo con el return
+
 function login($usu, $pw) {
     global $usuarios;
     if (empty($pw)) {
@@ -100,6 +102,8 @@ function login($usu, $pw) {
     return isset($usuarios[$usu]) && $usuarios[$usu]['contraseña'] === $pw;
 }
 
+// 5. Si el usuario no existe lanzo una excepción. 
+// Si existe, lo imprimo. 
 function escribeUsuario($usu) {
     global $usuarios;
     if (!isset($usuarios[$usu])) {
@@ -110,6 +114,7 @@ function escribeUsuario($usu) {
     echo "Está con nosotros desde el " . date("d de F de Y", strtotime($user['fechaAlta'])) . "<br><br>";
 }
 
+// 6. Si el usuario no existe lanzo una excepción. 
 function escribePrestamos($usu) {
     global $prestamos, $libros, $usuarios;
     if (!isset($usuarios[$usu])) {
@@ -117,6 +122,7 @@ function escribePrestamos($usu) {
     }
     echo "Préstamos realizados por {$usuarios[$usu]['nombre']}<br>";
     echo "<table border='1'>";
+// 7. Imprimo todos los prestamos del usuario en una tabla
     echo "<tr><th>ISBN</th><th>Título</th><th>Fecha de inicio</th><th>Fecha de Fin</th><th>Retrasado</th></tr>";
     foreach ($prestamos as $prestamo) {
         if ($prestamo['usuario'] === $usu) {
@@ -124,6 +130,8 @@ function escribePrestamos($usu) {
             $titulo = $libros[$isbn]['titulo'];
             $fechaInicio = date("d-m-Y", strtotime($prestamo['fechaInicio']));
             $fechaFin = date("d-m-Y", strtotime($prestamo['fechaFin']));
+// 8. Si la fecha de hoy es mayor que la fecha de fin de prestamo entonces marco retrasado como 'No'
+// ¡Ojo a la forma de hacer la condición! 
             $retrasado = (strtotime($prestamo['fechaFin']) < time()) ? 'SI' : 'NO';
             echo "<tr><td>$isbn</td><td>$titulo</td><td>$fechaInicio</td><td>$fechaFin</td><td>$retrasado</td></tr>";
         }
