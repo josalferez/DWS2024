@@ -6,11 +6,12 @@
     <title>Información del Alumno</title>
 </head>
 <body>
+    
     <h1>Información del Alumno Añadido</h1>
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Capturar los datos enviados desde el formulario
+        // 1. Capturamos los datos enviados desde el formulario
         $nombre = $_POST['nombre'] ?? '';
         $apellidos = $_POST['apellidos'] ?? '';
         $fecha_nacimiento = $_POST['fecha_nacimiento'] ?? '';
@@ -21,7 +22,7 @@
         $contrasena = $_POST['contrasena'] ?? '';
         $repite_contrasena = $_POST['repite_contrasena'] ?? '';
 
-        // Mostrar la información
+        // 2. Mostrar la información
         echo "<p><strong>Nombre:</strong> $nombre</p>";
         echo "<p><strong>Apellidos:</strong> $apellidos</p>";
         echo "<p><strong>Fecha de Nacimiento:</strong> $fecha_nacimiento</p>";
@@ -30,7 +31,7 @@
         echo "<p><strong>¿Sabe crear páginas web estáticas?:</strong> $sabe_web</p>";
         echo "<p><strong>Comentarios:</strong> $comentarios</p>";
 
-        // Validar las contraseñas
+        // 3. Validamos las contraseñas
         if ($contrasena === $repite_contrasena) {
             echo "<p><strong>Contraseña:</strong> La contraseña coincide.</p>";
         } else {
