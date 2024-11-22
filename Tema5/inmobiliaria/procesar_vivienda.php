@@ -1,6 +1,7 @@
 <?php
 // Función para generar el identificador de la vivienda
-function generar_identificador_vivienda() {
+function generar_identificador_vivienda()
+{
     // Obtener la fecha actual
     $fechaActual = date('Ymd'); // Formato: año, mes, día (e.g., 20241110)
     // Leer el último identificador del archivo (si existe)
@@ -43,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Validar y procesar fotos
     $rutaFotos = [];
-    if (isset($_FILES['foto']) && count($_FILES['foto']['name']) > 0) {
+    if (isset($_FILES['foto']) && is_array($_FILES['foto']['name'])) {
         $carpetaFotos = 'fotos/';
         if (!file_exists($carpetaFotos)) {
             mkdir($carpetaFotos);
@@ -67,10 +68,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo "Error al subir la foto " . ($i + 1) . ".<br>";
             }
         }
+    } else {
+        echo "No se han subido fotos válidas.<br>";
     }
 
+
     // Calcular beneficio
-    function calcular_beneficio($zona, $tamano, $precio) {
+    function calcular_beneficio($zona, $tamano, $precio)
+    {
         $porcentajes = [
             "Centro" => $tamano > 100 ? 0.35 : 0.30,
             "Zaidín" => $tamano > 100 ? 0.28 : 0.25,
@@ -113,5 +118,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <br>
 <h3>
-<a href="inmobiliaria.php">Volver al formulario de alta</a>
+    <a href="inmobiliaria.php">Volver al formulario de alta</a>
 </h3>
