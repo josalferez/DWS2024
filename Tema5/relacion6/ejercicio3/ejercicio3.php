@@ -19,6 +19,6 @@ try {
         throw new Exception("Error al abrir el fichero", 1);
     }
 } catch (\Throwable $e) {
-    echo $e->getMessage();
+    echo $e->getMessage(); //Hola
 }
 ?>

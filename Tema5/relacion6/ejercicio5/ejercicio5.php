@@ -22,7 +22,7 @@ if ($handle) {
 }
 
 // 3. Abrir el archivo en modo escritura para agregar nuevo contenido
-$handle = fopen($filename, "w"); // Modo 'w' borra el contenido anterior
+$handle = fopen($filename, "a"); // Modo 'a' agrega el contenido anterior
 if ($handle) {
     fwrite($handle, "Nuevo contenido del archivo.\n");
     fclose($handle); // Cerrar el archivo
