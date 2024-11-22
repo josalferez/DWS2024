@@ -20,7 +20,11 @@ function generar_identificador_vivienda()
     }
 
     // Generar el nuevo identificador
-    $identificador = $fechaActual . str_pad($contador, 3, '0', STR_PAD_LEFT);
+    // str_pad -> contador: es un numero que se convertirá a string
+    //         -> 3: es la longitud total de los caracteres que se van a añadir
+    //         -> '0' es el numero con el completaremos hasta 3 caracteres en caso que sea necesario
+    //         -> STR_PAD_LEFT especifica que el numero de caracteres se añadirá a la izquierda del string que ya haya.   
+    $identificador = $fechaActual . str_pad($contador, 3, '0', STR_PAD_LEFT); 
 
     // Guardar el nuevo valor en el archivo
     file_put_contents($archivoSecuencia, $identificador);
@@ -33,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Generar el identificador de vivienda
     $idVivienda = generar_identificador_vivienda();
 
-    $tipo = $_POST['tipo'] ?? '';
+    $tipo = $_POST['tipo'] ?? ''; // Si no existe $_POST['tipo'] o su valor es null, entonces le asignamos a $tipo el valor ''; ?? Operador null coalescing
     $zona = $_POST['zona'] ?? '';
     $direccion = $_POST['direccion'] ?? '';
     $dormitorios = (int)($_POST['dormitorios'] ?? 0);

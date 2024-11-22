@@ -7,3 +7,4 @@ vivienda_672f38a6affe8, Piso, Centro, FGL,31, 2, 250000, 100, Piscina, Jardín, 
 20241110005, Piso, Centro, FGL,31, 2, 150000, 90, Piscina, 25, , 45000
 20241110006, Piso, Centro, FGL,31, 3, 123123, 23, Jardín, aa, , 36936.9
 20241122002, Piso, Zaidín, FGL,31, 3, 150000, 80, Piscina, Jardín, Nordico 1, , 37500
+20241122003, Piso, Centro, FGL,31, 4, 190000, 90, Piscina, Jardín, dormitorio, , 57000
