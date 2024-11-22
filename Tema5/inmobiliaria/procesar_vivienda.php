@@ -1,6 +1,7 @@
 <?php
 // Función para generar el identificador de la vivienda
-function generar_identificador_vivienda() {
+function generar_identificador_vivienda()
+{
     // Obtener la fecha actual
     $fechaActual = date('Ymd'); // Formato: año, mes, día (e.g., 20241110)
     // Leer el último identificador del archivo (si existe)
@@ -19,7 +20,11 @@ function generar_identificador_vivienda() {
     }
 
     // Generar el nuevo identificador
-    $identificador = $fechaActual . str_pad($contador, 3, '0', STR_PAD_LEFT);
+    // str_pad -> contador: es un numero que se convertirá a string
+    //         -> 3: es la longitud total de los caracteres que se van a añadir
+    //         -> '0' es el numero con el completaremos hasta 3 caracteres en caso que sea necesario
+    //         -> STR_PAD_LEFT especifica que el numero de caracteres se añadirá a la izquierda del string que ya haya.   
+    $identificador = $fechaActual . str_pad($contador, 3, '0', STR_PAD_LEFT); 
 
     // Guardar el nuevo valor en el archivo
     file_put_contents($archivoSecuencia, $identificador);
@@ -32,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Generar el identificador de vivienda
     $idVivienda = generar_identificador_vivienda();
 
-    $tipo = $_POST['tipo'] ?? '';
+    $tipo = $_POST['tipo'] ?? ''; // Si no existe $_POST['tipo'] o su valor es null, entonces le asignamos a $tipo el valor ''; ?? Operador null coalescing
     $zona = $_POST['zona'] ?? '';
     $direccion = $_POST['direccion'] ?? '';
     $dormitorios = (int)($_POST['dormitorios'] ?? 0);
@@ -43,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Validar y procesar fotos
     $rutaFotos = [];
-    if (isset($_FILES['foto']) && count($_FILES['foto']['name']) > 0) {
+    if (isset($_FILES['foto']) && is_array($_FILES['foto']['name'])) {
         $carpetaFotos = 'fotos/';
         if (!file_exists($carpetaFotos)) {
             mkdir($carpetaFotos);
@@ -67,10 +72,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo "Error al subir la foto " . ($i + 1) . ".<br>";
             }
         }
+    } else {
+        echo "No se han subido fotos válidas.<br>";
     }
 
+
     // Calcular beneficio
-    function calcular_beneficio($zona, $tamano, $precio) {
+    function calcular_beneficio($zona, $tamano, $precio)
+    {
         $porcentajes = [
             "Centro" => $tamano > 100 ? 0.35 : 0.30,
             "Zaidín" => $tamano > 100 ? 0.28 : 0.25,
@@ -113,5 +122,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <br>
 <h3>
-<a href="inmobiliaria.php">Volver al formulario de alta</a>
+    <a href="inmobiliaria.php">Volver al formulario de alta</a>
 </h3>

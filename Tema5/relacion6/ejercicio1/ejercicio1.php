@@ -13,7 +13,7 @@
         }else{
             echo " fichero_no_existe.txt se abrió con éxito<br>";
         } 
-        fclose($fich);
+        fclose($fich); //Vamos a cerrar cada fichero que hayamos abierto
     }catch(Exception $e){
         echo $e->getMessage();
     }
