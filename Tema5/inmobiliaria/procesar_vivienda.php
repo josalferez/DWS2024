@@ -48,12 +48,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Validar y procesar fotos
     $rutaFotos = [];
-    if (isset($_FILES['foto']) && is_array($_FILES['foto']['name'])) { // Si se ha subido una foto
+    if (isset($_FILES['foto']) && count($_FILES['foto']['name']) > 0) { // Si se ha subido una foto
         $carpetaFotos = 'fotos/';
         if (!file_exists($carpetaFotos)) { // Creo el directorio en el caso de que no esté creado
             mkdir($carpetaFotos);
         }
-
         // Iterar a través de un máximo de 5 fotos
         for ($i = 0; $i < min(5, count($_FILES['foto']['name'])); $i++) {
             if ($_FILES['foto']['size'][$i] > 100000 * 1024) {

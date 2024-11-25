@@ -56,7 +56,7 @@
         <br>
 
         <label for="foto">Foto (máx 100MB):
-            <input type="file" name="foto" id="foto" accept="image/*" multiple> </label> <!-- accept="image/* Solo permitimos subir imágenes -->
+            <input type="file" name="foto[]" id="foto" accept="image/*" multiple> </label> <!-- accept="image/* Solo permitimos subir imágenes -->
         <br><br>
 
         <label for="observaciones">Observaciones:</label>
