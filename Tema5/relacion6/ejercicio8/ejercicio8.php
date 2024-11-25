@@ -8,14 +8,14 @@ if (!is_dir($directorio)) {
 
 // Manejo de la subida de imágenes
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['imagen'])) {
-    $nombreArchivo = basename($_FILES['imagen']['name']);
+    $nombreArchivo = basename($_FILES['imagen']['name']); // Si el archivo está en C:/url/al/archivo.jpg -> basename se queda con archivo.jpg
     $rutaDestino = $directorio . '/' . $nombreArchivo;
 
     // Comprobar si el archivo es una imagen
     $tipoArchivo = pathinfo($rutaDestino, PATHINFO_EXTENSION); // Cogemos la extensión del archivo con pathinfo
     $tiposPermitidos = ['jpg', 'jpeg', 'png', 'gif'];
 
-    if (in_array(strtolower($tipoArchivo), $tiposPermitidos)) {
+    if (in_array(strtolower($tipoArchivo), $tiposPermitidos)) { // Comprobamos que el fichero tiene una extensión permitida
         if (move_uploaded_file($_FILES['imagen']['tmp_name'], $rutaDestino)) { //movemos la imagen del directorio temporal al destino
             echo "La imagen se ha subido correctamente.<br>";
         } else {
