@@ -12,11 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['imagen'])) {
     $rutaDestino = $directorio . '/' . $nombreArchivo;
 
     // Comprobar si el archivo es una imagen
-    $tipoArchivo = pathinfo($rutaDestino, PATHINFO_EXTENSION);
+    $tipoArchivo = pathinfo($rutaDestino, PATHINFO_EXTENSION); // Cogemos la extensión del archivo con pathinfo
     $tiposPermitidos = ['jpg', 'jpeg', 'png', 'gif'];
 
     if (in_array(strtolower($tipoArchivo), $tiposPermitidos)) {
-        if (move_uploaded_file($_FILES['imagen']['tmp_name'], $rutaDestino)) {
+        if (move_uploaded_file($_FILES['imagen']['tmp_name'], $rutaDestino)) { //movemos la imagen del directorio temporal al destino
             echo "La imagen se ha subido correctamente.<br>";
         } else {
             echo "Error al subir la imagen.<br>";
@@ -29,8 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['imagen'])) {
 // Mostrar las imágenes en el directorio
 if ($handle = opendir($directorio)) {
     echo "<br> Imágenes en el directorio '$directorio':<br>";
-    while (false !== ($entry = readdir($handle))) {
-        if ($entry != "." && $entry != "..") {
+    while (false !== ($entry = readdir($handle))) { // Vamos a ir leyendo todos los ficheros y subdirectorios
+        if ($entry != "." && $entry != "..") { // Menos el directorio actual y el directorio anterior
             echo "<img src='$directorio/$entry' alt='$entry' style='width:100px; height:auto; margin:5px;'><br>";
         }
     }
