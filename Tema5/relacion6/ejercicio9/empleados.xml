@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <departamento nombre="Marketing" jefeDep="e101">
     
     <empleado codEmple="e101">
@@ -5,7 +6,7 @@
         <apellidos>Frutos Jarama</apellidos>
         <edad>28</edad>
         <carnetConducir/>
-    </empleado>
+    <telefono>654654654</telefono><codigoPostal>18014</codigoPostal></empleado>
     
     <empleado codEmple="e102">
         <nombre>Antonio</nombre>
