@@ -10,7 +10,7 @@
 
 <body>
 
-    <form action="procesar_vivienda.php" method="POST" enctype="multipart/form-data">
+    <form action="procesar_vivienda.php" method="POST" enctype="multipart/form-data"> <!-- Como vamos a meter fotos añadioms multipart/form-data -->
         <h1 style="text-align: center;">Formulario de Vivienda</h1>
         <label for="tipo">Tipo de vivienda:</label>
         <select name="tipo" id="tipo">
@@ -48,14 +48,15 @@
         <input type="number" name="tamano" id="tamano" required>
         <br><br>
 
+
         <label>Extras:</label>
-        <input type="checkbox" name="extras[]" value="Piscina">Piscina
-        <input type="checkbox" name="extras[]" value="Jardín">Jardín
-        <input type="checkbox" name="extras[]" value="Garaje">Garaje
+        <label>Piscina <input type="checkbox" name="extras[]" value="Piscina"></label>
+        <label>Jardin <input type="checkbox" name="extras[]" value="Jardín"></label>
+        <label>Garaje <input type="checkbox" name="extras[]" value="Garaje"></label>
         <br>
 
         <label for="foto">Foto (máx 100MB):
-        <input type="file" name="foto" id="foto" accept="image/*"> </label> <!-- accept="image/* Solo permitimos subir imágenes -->
+            <input type="file" name="foto" id="foto" accept="image/*" multiple> </label> <!-- accept="image/* Solo permitimos subir imágenes -->
         <br><br>
 
         <label for="observaciones">Observaciones:</label>

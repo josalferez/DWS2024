@@ -12,7 +12,7 @@ form {
 
 label{
     display: inline;
-    width: 100px;
+    width: 80px;
     white-space: nowrap; /* Evita el salto de línea en los label con varias palabras*/ 
 }
 
