@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Validar y procesar fotos
     $rutaFotos = [];
-    if (isset($_FILES['foto']) && is_array($_FILES['foto']['name'])) { // Si se ha subido una foto y si se han subido varias fotos
+    if (isset($_FILES['foto']) && is_array($_FILES['foto']['name'])) { // Si se ha subido una foto
         $carpetaFotos = 'fotos/';
         if (!file_exists($carpetaFotos)) { // Creo el directorio en el caso de que no esté creado
             mkdir($carpetaFotos);
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Iterar a través de un máximo de 5 fotos
         for ($i = 0; $i < min(5, count($_FILES['foto']['name'])); $i++) {
-            if ($_FILES['foto']['size'][$i] > 100 * 1024) {
+            if ($_FILES['foto']['size'][$i] > 1000 * 1024) {
                 echo "La foto " . ($i + 1) . " excede el límite de 100 KB y no se ha subido.<br>";
                 continue;
             }

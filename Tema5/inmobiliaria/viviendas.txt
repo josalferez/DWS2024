@@ -12,3 +12,5 @@ vivienda_672f38a6affe8, Piso, Centro, FGL,31, 2, 250000, 100, Piscina, Jardín, 
 20241125002, Piso, Centro, FGL,31, 3, 150000, 75, Garaje, , , 45000
 20241125003, Piso, Centro, FGL,31, 2, 150000, 75, Piscina, , , 45000
 20241125004, Piso, Centro, FGL,31, 2, 150000, 80, Piscina, Jardín, foo, , 45000
+20241125006, Piso, Centro, FGL,31, 2, 150000, 84, Piscina, , , 45000
+20241125007, Piso, Centro, FGL,31, 2, 540000, 80, Piscina, Jardín, , , 162000
