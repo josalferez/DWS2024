@@ -3,7 +3,7 @@ $directorio = 'mi_carpeta';
 
 // Crear el directorio si no existe
 if (!is_dir($directorio)) {
-    mkdir($directorio, 0755, true);
+    mkdir($directorio, 0755, true); // true, nos va a permitir crear directorios anidados
 }
 
 // Manejo de la subida de archivos
