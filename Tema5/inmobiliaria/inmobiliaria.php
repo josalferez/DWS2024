@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilos.css">
     <title>Alta de Vivienda</title>
 </head>
+
 <body>
-    <h1>Formulario de Vivienda</h1>
+
     <form action="procesar_vivienda.php" method="POST" enctype="multipart/form-data">
+        <h1 style="text-align: center;">Formulario de Vivienda</h1>
         <label for="tipo">Tipo de vivienda:</label>
         <select name="tipo" id="tipo">
             <option value="Piso">Piso</option>
@@ -15,7 +19,7 @@
             <option value="Chalet">Chalet</option>
             <option value="Casa">Casa</option>
         </select>
-        <br>
+        <br> <br>
 
         <label for="zona">Zona:</label>
         <select name="zona" id="zona">
@@ -26,7 +30,7 @@
             <option value="Sacromonte">Sacromonte</option>
             <option value="Realejo">Realejo</option>
         </select>
-        <br>
+        <br> <br>
 
         <label for="direccion">Dirección:</label>
         <input type="text" name="direccion" id="direccion" required>
@@ -42,7 +46,7 @@
 
         <label for="tamano">Tamaño (m²):</label>
         <input type="number" name="tamano" id="tamano" required>
-        <br>
+        <br><br>
 
         <label>Extras:</label>
         <input type="checkbox" name="extras[]" value="Piscina"> Piscina
@@ -50,15 +54,16 @@
         <input type="checkbox" name="extras[]" value="Garaje"> Garaje
         <br>
 
-        <label for="foto">Foto (máx 100MB):</label>
-        <input type="file" name="foto" id="foto" accept="image/*">
-        <br>
+        <label for="foto">Foto (máx 100MB):
+        <input type="file" name="foto" id="foto" accept="image/*"> </label>
+        <br><br>
 
         <label for="observaciones">Observaciones:</label>
         <textarea name="observaciones" id="observaciones"></textarea>
         <br>
 
-        <input type="submit" value="Enviar">
+        <button>Enviar</button>
     </form>
 </body>
+
 </html>
