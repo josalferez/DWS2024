@@ -5,13 +5,13 @@ function generar_identificador_vivienda()
     // Obtener la fecha actual
     $fechaActual = date('Ymd'); // Formato: año, mes, día (e.g., 20241110)
     // Leer el último identificador del archivo (si existe)
-    $archivoSecuencia = 'secuencia_viviendas.txt';
+    $archivoSecuencia = 'secuencia_viviendas.txt'; // En secuencia_viviendas solo guardamos el último valor
     $contador = 1;
 
     if (file_exists($archivoSecuencia)) {
         $ultimoRegistro = file_get_contents($archivoSecuencia);
-        $ultimaFecha = substr($ultimoRegistro, 0, 8);
-        $ultimoContador = (int)substr($ultimoRegistro, 8);
+        $ultimaFecha = substr($ultimoRegistro, 0, 8); // Cogemos los primeros 8 caracteres del fichero
+        $ultimoContador = (int)substr($ultimoRegistro, 8); // Cogemos los caracteres 9, 10 y 11 y los tipeamos a entero
 
         // Si es el mismo día, incrementar el contador; si no, reiniciar
         if ($ultimaFecha === $fechaActual) {
@@ -48,9 +48,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Validar y procesar fotos
     $rutaFotos = [];
-    if (isset($_FILES['foto']) && is_array($_FILES['foto']['name'])) {
+    if (isset($_FILES['foto']) && is_array($_FILES['foto']['name'])) { // Si se ha subido una foto y si se han subido varias fotos
         $carpetaFotos = 'fotos/';
-        if (!file_exists($carpetaFotos)) {
+        if (!file_exists($carpetaFotos)) { // Creo el directorio en el caso de que no esté creado
             mkdir($carpetaFotos);
         }
 
@@ -75,7 +75,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         echo "No se han subido fotos válidas.<br>";
     }
-
 
     // Calcular beneficio
     function calcular_beneficio($zona, $tamano, $precio)

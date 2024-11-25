@@ -49,13 +49,13 @@
         <br><br>
 
         <label>Extras:</label>
-        <input type="checkbox" name="extras[]" value="Piscina"> Piscina
-        <input type="checkbox" name="extras[]" value="Jardín"> Jardín
-        <input type="checkbox" name="extras[]" value="Garaje"> Garaje
+        <input type="checkbox" name="extras[]" value="Piscina">Piscina
+        <input type="checkbox" name="extras[]" value="Jardín">Jardín
+        <input type="checkbox" name="extras[]" value="Garaje">Garaje
         <br>
 
         <label for="foto">Foto (máx 100MB):
-        <input type="file" name="foto" id="foto" accept="image/*"> </label>
+        <input type="file" name="foto" id="foto" accept="image/*"> </label> <!-- accept="image/* Solo permitimos subir imágenes -->
         <br><br>
 
         <label for="observaciones">Observaciones:</label>
