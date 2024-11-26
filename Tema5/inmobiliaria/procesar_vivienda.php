@@ -24,7 +24,7 @@ function generar_identificador_vivienda()
     //         -> 3: es la longitud total de los caracteres que se van a añadir
     //         -> '0' es el numero con el completaremos hasta 3 caracteres en caso que sea necesario
     //         -> STR_PAD_LEFT especifica que el numero de caracteres se añadirá a la izquierda del string que ya haya.   
-    $identificador = $fechaActual . str_pad($contador, 5, '0', STR_PAD_LEFT); 
+    $identificador = $fechaActual . str_pad($contador, 3, '0', STR_PAD_LEFT); 
 
     // Guardar el nuevo valor en el archivo
     file_put_contents($archivoSecuencia, $identificador);
