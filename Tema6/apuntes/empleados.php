@@ -4,6 +4,12 @@ class Empleado{
     public $Nombre;
     public $Apellidos;    
 
+    public function __construct($nombre=null,$apellidos=null)
+    {
+        $this->Nombre = $nombre;
+        $this->Apellidos = $apellidos;        
+    }
+    
     public function setNombre($nombre){
         $this->Nombre = $nombre;
     }
@@ -26,9 +32,13 @@ class Empleado{
     }
 }
 
-$emp = new Empleado;
+$emp = new Empleado();
 
 $emp->setNombre('Juan');
 $emp->setApellidos('Alvarez Manzano');
 echo $emp;
+
+$emp2 = new Empleado("Pedro","Paramo");
+echo $emp2;
 ?>
+

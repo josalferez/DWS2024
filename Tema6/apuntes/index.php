@@ -1,7 +1,8 @@
 <?php 
 
 class Persona {
-    public function __construct(private string $dni, private string $nombre, private string $apellido){}
+    public function __construct(private string $dni, 
+        private string $nombre, private string $apellido){}
 
     public function getNombre(){
         return $this->nombre;
@@ -22,13 +23,11 @@ class Persona {
     public function __toString(){
         return "<br>Persona: " . $this->nombre . " " . $this->apellido;
     }
-
 }
 
 class Cliente extends Persona {
-    public function __construct($dni, $nombre, $apellido, $saldo){
+    public function __construct($dni, $nombre, $apellido, private int $saldo){
         parent::__construct($dni,$nombre,$apellido);
-        $this->saldo = $saldo;
     }
     
     public function getSaldo(){
