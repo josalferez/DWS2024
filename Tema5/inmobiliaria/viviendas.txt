@@ -26,3 +26,5 @@ vivienda_672f38a6affe8, Piso, Centro, FGL,31, 2, 250000, 100, Piscina, Jardín, 
 2024112500023, Piso, Centro, FGL,31, 2, 1232322342354, 23, Piscina, Garaje, , fotos/202411250002301.jpg, 369696702706.2
 2024112500024, Piso, Centro, FGL,31, 4, 205000, 80, Piscina, Jardín, , , 61500
 2024112500025, Piso, Centro, FGL,31, 3, 123432, 89, Piscina, Jardín, , fotos/202411250002501.jpg, fotos/202411250002502.jpeg, 37029.6
+2024112600001, Piso, Centro, FGL,31, 2, 150000, 80, Piscina, Jardín, af, , 45000
+2024112600002, Piso, Centro, FGL,31, 2, 150000, 80, Piscina, Jardín, af, fotos/202411260000201.png, fotos/202411260000202.png, 45000
