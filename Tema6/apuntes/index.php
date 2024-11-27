@@ -21,7 +21,7 @@ class Persona {
     }
 
     public function __toString(){
-        return "<br>Persona: " . $this->nombre . " " . $this->apellido;
+        return "<br> - Persona: " . $this->nombre . " " . $this->apellido;
     }
 }
 
@@ -45,11 +45,24 @@ class Cliente extends Persona {
 }
 
 
-$jose = new Persona("74682585L","Jose","Alferez");
-echo $jose->getNombre();
-echo $jose->getApellido();
+$per1 = new Persona("74682585L","Jose","Alferez");
+echo " - " . $per1->getNombre() . " " . $per1->getApellido();
 
-echo $jose;
+echo $per1;
 
 $cliente = new Cliente("123456789P","Carlos","Alferez",250000);
 echo $cliente;
+
+function cambiarNombre(Persona $per, string $nombreNuevo){
+    $per->setNombre($nombreNuevo);
+}
+
+cambiarNombre($per1,"Luis");
+echo $per1;
+
+$cliente2 = new Cliente(dni:"123456789P", apellido:"Perez", saldo:20000, nombre:"Luis");
+
+echo $cliente2;
+
+
+
