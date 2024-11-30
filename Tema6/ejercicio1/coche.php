@@ -2,12 +2,12 @@
 class Coche
 {
     public function __construct(
-        public string $color='',
-        public string $marca='',
-        public string $modelo='',
-        public int $velocidad=0,
-        public int $caballos=0,
-        public int $plazas=1 
+        public string $color='Rojo',
+        public string $marca='Ferrari',
+        public string $modelo='Aventador',
+        public int $velocidad=300,
+        public int $caballos=500,
+        public int $plazas=2 
     ) {}
 
     public function setColor($color)
