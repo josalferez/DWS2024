@@ -1,77 +1,82 @@
 <?php
-// Clase base
-class BaseCalc
-{
-    public function __construct(
-        protected float $num1,
-        protected float $num2
-    ) {}
 
-    public function calculate(): string
+class Producto
+{
+
+    //Creo el constructor
+    const IVA = 0.20;
+    const DESCUENTO_MAXIMO = 30;
+
+    // 1. Inicializo instancias de mi clase
+    public function __construct(public string $nombre, public float $precio, public int $stock)
     {
-        return "Número 1: {$this->num1}, Número 2: {$this->num2}";
+        $this->setPrecio($precio); // Valido que el precio sea más que 0
     }
-}
 
-// Clase para suma
-class AddCalc extends BaseCalc
-{
-    public function calculate(): string
+    // 2. Asigno el precio a un producto de mi clase. 
+    public function setPrecio($precio)
     {
-        $result = $this->num1 + $this->num2;
-        return "La suma de {$this->num1} y {$this->num2} es: {$result}";
-    }
-}
-
-// Clase para resta
-class SubCalc extends BaseCalc
-{
-    public function calculate(): string
-    {
-        $result = $this->num1 - $this->num2;
-        return "La resta de {$this->num1} y {$this->num2} es: {$result}";
-    }
-}
-
-// Clase para multiplicación
-class MulCalc extends BaseCalc
-{
-    public function calculate(): string
-    {
-        $result = $this->num1 * $this->num2;
-        return "La multiplicación de {$this->num1} y {$this->num2} es: {$result}";
-    }
-}
-
-// Clase para división
-class DivCalc extends BaseCalc
-{
-    public function calculate(): string
-    {
-        if ($this->num2 == 0) {
-            return "Error: División entre cero no permitida.";
+        if ($precio > 0) {
+            $this->precio = $precio;
+        } else {
+            throw new Exception("Error: El Precio debe ser mayor que 0", 1);
         }
-        $result = $this->num1 / $this->num2;
-        return "La división de {$this->num1} entre {$this->num2} es: {$result}";
+    }
+
+    // 3. Calculo el precio con IVA
+    public static function calcularPrecioConIva(float $precio)
+    {
+        if ($precio > 0) {
+            return $precio + ($precio * self::IVA);
+        } else {
+            throw new Exception("El precio debe ser mayor a 0 para calcular el IVA.");
+        }
+    }
+
+    // 4.Obtengo el precio de un producto.
+    public function getPrecio()
+    {
+        return $this->precio;
+    }
+
+    // 5. Muestro un producto
+    public function mostrarInformacion()
+    {
+        return  "<br>Nombre: " . $this->nombre .
+            "<br>Precio: " . $this->precio .
+            "<br>Stock: " . $this->stock;
+    }
+
+    // 6. Muestro Información
+    public function __toString()
+    {
+        return $this->mostrarInformacion();
+    }
+
+    // 7. Aplico un descuento
+    public function aplicarDescuento($porcentaje) {
+        if ($porcentaje < self::DESCUENTO_MAXIMO) {
+            $precioSinDescuento = $this->getprecio();
+            $precioConDescuento = $precioSinDescuento - ($precioSinDescuento * $porcentaje / 100);
+            
+            return $this->setPrecio($precioConDescuento);
+
+        } else{
+            throw new Exception("Error: El descuento no puede ser superior al 30%", 1);
+            
+        }
     }
 }
 
-// Uso de las clases
-$num1 = 10;
-$num2 = 5;
+try {
+    $p = new Producto("Producto 1", 50, 10);
+    echo $p;
+    $descuento = 20;
+    $p->aplicarDescuento($descuento);
+    echo "<br>Aplicamos un descuento del {$descuento}% <br>";
+    $precioConIva = Producto::calcularPrecioConIva($p->getPrecio());
+    echo "<br>Precio con IVA(" . Producto::IVA*100 . "%): " . number_format($precioConIva, 2) . "<br>";
 
-$add = new AddCalc($num1, $num2);
-$sub = new SubCalc($num1, $num2);
-$mul = new MulCalc($num1, $num2);
-$div = new DivCalc($num1, $num2);
-
-echo $add->calculate() . PHP_EOL;
-echo $sub->calculate() . PHP_EOL;
-echo $mul->calculate() . PHP_EOL;
-echo $div->calculate() . PHP_EOL;
-
-// Ejemplo de división por cero
-$num3 = 0;
-$divError = new DivCalc($num1, $num3);
-echo $divError->calculate() . PHP_EOL;
-?>
+} catch (\Throwable $e) {
+    echo $e->getMessage();
+}
