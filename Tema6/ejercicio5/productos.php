@@ -35,7 +35,7 @@ class Producto
         if ($porcentaje > self::DESCUENTO_MAXIMO) {
             throw new InvalidArgumentException("El descuento no puede exceder el máximo permitido.");
         }
-        $this->precio -= ($this->precio * $porcentaje / 100);
+        $this->precio -= ($this->precio * $porcentaje / 100);  // -> $this->precio = $this->precio - ($this->precio * $porcentaje / 100); $this->precio = 100 - (100 * 20 / 100);  $this->precio = 100 - 20; $this->precio = 80;
     }
 }
 
