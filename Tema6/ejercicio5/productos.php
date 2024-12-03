@@ -42,10 +42,10 @@ class Producto
 // Ejemplo de uso
 try {
     $producto = new Producto("Laptop", 1000, 10);
-    echo "Precio original con IVA: " . Producto::calcularPrecioConIva($producto->precio) . PHP_EOL;
+    echo "Precio original con IVA: " . Producto::calcularPrecioConIva($producto->precio) . "<br>";
 
     $producto->aplicarDescuento(20);
-    echo "Precio después del descuento: " . $producto->precio . PHP_EOL;
+    echo "Precio después del descuento: " . $producto->precio . "<br>";
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
 }

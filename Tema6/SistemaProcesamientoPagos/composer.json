@@ -1,0 +1,8 @@
+{
+    "description": "Programa de procesamiento de pagos",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
