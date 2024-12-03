@@ -1,6 +1,10 @@
 <?php 
 
-require_once __DIR__ . "/vendor/autoload.php";
+//require_once __DIR__ . "/vendor/autoload.php";
+require_once 'src/Interfaces/PagoInterfaces.php';
+require_once 'src/Pagos/Paypal.php';
+require_once 'src/Pagos/TarjetaCredito.php';
+require_once 'src/Pagos/TransferenciaBancaria.php';
 
 use App\Pagos\Paypal;
 use App\Pagos\TarjetaCredito;
