@@ -1,4 +1,28 @@
 <?php
+
+trait Validaciones
+{
+    // Validar que el email sea válido
+    public function validarEmail($email)
+    {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            throw new Exception("El correo electrónico no es válido.");
+        }
+    }
+
+    // Validar que la contraseña sea fuerte
+    public function validarContrasena($contrasena)
+    {
+        if (strlen($contrasena) < self::LONGITUD_MINIMA_CONTRASENA) {
+            throw new Exception("La contraseña debe tener al menos " . self::LONGITUD_MINIMA_CONTRASENA . " caracteres.");
+        }
+
+        if (!preg_match('/[A-Za-z]/', $contrasena) || !preg_match('/\d/', $contrasena)) {
+            throw new Exception("La contraseña debe contener al menos una letra y un número.");
+        }
+    }
+}
+
 class Usuario
 {
     use Validaciones;
@@ -41,29 +65,6 @@ class Usuario
         }
 
         return true; // Autenticación exitosa
-    }
-}
-
-trait Validaciones
-{
-    // Validar que el email sea válido
-    public function validarEmail($email)
-    {
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            throw new Exception("El correo electrónico no es válido.");
-        }
-    }
-
-    // Validar que la contraseña sea fuerte
-    public function validarContrasena($contrasena)
-    {
-        if (strlen($contrasena) < self::LONGITUD_MINIMA_CONTRASENA) {
-            throw new Exception("La contraseña debe tener al menos " . self::LONGITUD_MINIMA_CONTRASENA . " caracteres.");
-        }
-
-        if (!preg_match('/[A-Za-z]/', $contrasena) || !preg_match('/\d/', $contrasena)) {
-            throw new Exception("La contraseña debe contener al menos una letra y un número.");
-        }
     }
 }
 
