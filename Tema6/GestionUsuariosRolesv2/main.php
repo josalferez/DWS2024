@@ -27,6 +27,7 @@ echo "Permisos de Sara: " . $gestor->mostrarPermisosUsuario("Sara") . "<br>";
 echo "Permisos de Alonso: " . $gestor->mostrarPermisosUsuario("Alonso") . "<br>";
 
 // Ejecutar acciones de los usuarios
-echo "Juan intenta crear: " . $gestor->ejecutarAccionUsuario("Juan", "crear") . "<br>";
-echo "Carlos intenta eliminar: " . $gestor->ejecutarAccionUsuario("Carlos", "eliminar") . "<br>";
-echo "Ana intenta editar: " . $gestor->ejecutarAccionUsuario("Ana", "editar") . "<br>";
+echo "<br>";
+echo "Juan intenta crear: " . $gestor->ejecutarAccionUsuario("Jose", "crear") . "<br>";
+echo "Carlos intenta eliminar: " . $gestor->ejecutarAccionUsuario("Sara", "eliminar") . "<br>";
+echo "Ana intenta editar: " . $gestor->ejecutarAccionUsuario("Alonso", "editar") . "<br>";

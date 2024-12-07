@@ -23,4 +23,5 @@ class Administrador implements RolInterface{
             default:
                 return "Acción desconocida.";
         }
+    }
 }

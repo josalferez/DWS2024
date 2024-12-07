@@ -114,7 +114,7 @@ try {
     echo "Saldo Tarjeta: " . $tarjeta->obtenerSaldo() . "<br>";
 
     // Intentar retirar más del límite
-    $tarjeta->retirar(1050); // Excede el límite de crédito
+    $tarjeta->retirar(1101); // Excede el límite de crédito
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage() . "<br>";
 }
