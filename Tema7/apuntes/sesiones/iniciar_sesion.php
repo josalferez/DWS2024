@@ -1,4 +1,8 @@
 <?php
+
+// Cierro la sesión si hay inactividad en 1 minuto.
+include 'cerrarSesionInactividad.php';
+
 // Inicia la sesión
 session_start();
 
