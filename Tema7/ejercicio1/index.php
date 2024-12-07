@@ -18,7 +18,7 @@ switch ($valor) {
         break;
     
     default:
-        echo 
+        echo "Lo que sea";
         break;
 }
 
