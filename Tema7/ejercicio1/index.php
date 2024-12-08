@@ -18,9 +18,10 @@ switch ($valor) {
         break;
     
     default:
-        echo 
+        echo "Bienvenido, esta es tu {$valor} vez";
+        
         break;
 }
 
 //Elimino la cookie 
-setcookie($contador,$valor,time()-1);
+//setcookie($contador,$valor,time()-1);
