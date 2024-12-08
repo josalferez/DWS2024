@@ -15,7 +15,7 @@
      exit;
  }
  
- // Cerrar sesión eliminando la cookie
+ // Cerrar sesión eliminando las cookies
  if (isset($_GET['logout'])) {
      setcookie("usuario_login", "", time() - 3600); // Expira en el pasado
      header("Location: login_cookie.php");
