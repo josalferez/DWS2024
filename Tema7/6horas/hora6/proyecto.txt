@@ -1,0 +1,23 @@
+Desarrollar un sistema en PHP que incluya:
+
+Formulario de inicio de sesión:
+
+Campos: Usuario y contraseña.
+Validación básica con un usuario ficticio (por ejemplo, admin y 1234).
+Redirigir a una página de bienvenida si las credenciales son correctas.
+Manejo de sesiones y cookies:
+
+Guardar el nombre de usuario en una sesión.
+Crear una cookie de bienvenida que persista durante 7 días.
+Mensaje de bienvenida:
+
+Si la sesión está activa, mostrar el nombre del usuario.
+Si no hay sesión pero existe la cookie, mostrar "¡Hola de nuevo!".
+Cierre de sesión:
+
+Implementar un botón para cerrar sesión que:
+Destruya la sesión.
+Elimine la cookie.
+Tiempo de inactividad:
+
+Destruir la sesión automáticamente después de 5 minutos de inactividad.
