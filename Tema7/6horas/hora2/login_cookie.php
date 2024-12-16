@@ -10,14 +10,14 @@
  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      // Iniciar sesión guardando la cookie
      $usuario = $_POST['usuario'] ?? '';
-     setcookie("usuario_login", $usuario, time() + 7 * 86400); // 7 días
+     setcookie("usuario_login", $usuario, time() + 7 * 24 * 60 * 60); // 7 días
      header("Location: login_cookie.php"); // Redirigir para evitar reenvío del formulario
      exit;
  }
  
  // Cerrar sesión eliminando las cookies
  if (isset($_GET['logout'])) {
-     setcookie("usuario_login", "", time() - 3600); // Expira en el pasado
+     setcookie("usuario_login", "", time() - 1); // Expira en el pasado
      header("Location: login_cookie.php");
      exit;
  }

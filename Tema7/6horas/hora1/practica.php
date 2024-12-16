@@ -6,14 +6,13 @@
  * Mostrar un mensaje como:
  * Primera visita: "¡Bienvenido, esta es tu primera visita!".
  * Visitas repetidas: "Bienvenido de nuevo, esta es tu visita número X."
- * 
  */
 
 session_start(); // Iniciar sesión
 
 // Crear una cookie
 if (!isset($_COOKIE['visita'])) {
-    setcookie("visita", "true", time() + 3600); // Expira en 1 hora
+    setcookie("visita", "true", time() + 60 * 60); // Expira en 1 hora
     echo "¡Bienvenido, esta es tu primera visita!<br>";
 } else {
     echo "Bienvenido de nuevo.<br>";
