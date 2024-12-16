@@ -21,6 +21,7 @@
      header("Location: login_cookie.php");
      exit;
  }
+
  ?>
  <!DOCTYPE html>
  <html lang="es">
@@ -32,11 +33,11 @@
  <body>
      <?php if (isset($_COOKIE['usuario_login'])){ ?>
          <h1>Bienvenido de nuevo, <?php echo htmlspecialchars($_COOKIE['usuario_login']); ?>!</h1>
-         <a href="?logout=true">Cerrar sesión</a>
+         <a href="logout=true">Cerrar sesión</a>
      <?php }else{ ?>
          <form method="POST" action="">
              <label for="usuario">Nombre de usuario:</label>
-             <input type="text" id="usuario" name="usuario" required>
+             <input type="text" id="usuario" name="usuario">
              <button type="submit">Iniciar sesión</button>
          </form>
      <?php } ?>
