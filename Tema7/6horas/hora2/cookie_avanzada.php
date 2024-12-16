@@ -4,10 +4,10 @@ setcookie(
     "usuario_avanzado", 
     "Maria Lopez", 
     [
-        "expires" => time() + 86400, // 1 día
-        "path" => "/",               // Disponible en todo el sitio
-        "secure" => false,           // Cambiar a true en HTTPS
-        "httponly" => true           // No accesible desde JavaScript
+        "expires" => time() + 60 * 60 * 24, // 1 día
+        "path" => "/",                      // Disponible en todo el sitio
+        "secure" => false,                  // Cambiar a true en HTTPS
+        "httponly" => true                  // No accesible desde JavaScript
     ]
 );
 

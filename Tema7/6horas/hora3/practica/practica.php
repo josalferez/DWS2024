@@ -24,7 +24,7 @@ if (isset($_SESSION['ultimoAcceso']) && (time() - $_SESSION['ultimoAcceso'] > $t
     exit;
 }
 
-// muestro es id de sesión
+// muestro el id de sesión
 echo session_id() . "<br>";
 
 // Actualizar la hora de último acceso
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['usuario'] = $usuario;
 
         // Establecer una cookie para recordar al usuario (opcional)
-        setcookie('usuario', $usuario, time() + 86400, '/'); // La cookie expirará en 1 día
+        setcookie('usuario', $usuario, time() + 60 * 60 * 24, '/'); // La cookie expirará en 1 día
 
         // Redirigir a la página principal
         header("Location: practica.php");
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if (isset($_GET['logout'])) {
     session_unset(); // Eliminar todas las variables de sesión
     session_destroy(); // Destruir la sesión
-    setcookie('usuario', '', time() - 3600, '/'); // Eliminar la cookie
+    setcookie('usuario', '', time() - 1, '/'); // Eliminar la cookie
     header("Location: practica.php"); // Redirigir al formulario de login
     exit;
 }
