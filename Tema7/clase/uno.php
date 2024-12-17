@@ -5,10 +5,6 @@ session_start();
 $usuarioError = $contraseniaError="";
 $usuario = $_POST['usuario'] ?? "";
 $password = $_POST['password'] ?? "";
-var_dump($_POST);
-var_dump($_SESSION);
-var_dump($_GET);
-
 $usuarioValido = "admin";
 $passwordValido = '1234';
 
@@ -32,12 +28,11 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
         $_SESSION['idUsuario'] = $usuario;
         setcookie("Bienvenida", $usuario, time() + 7 * 24 * 60 * 60, '/');
         
-    // 4. Recargo la página para mostrar el mensaje de bienvenida. 
-    header("Location: " . htmlspecialchars($_SERVER['PHP_SELF']));
-    exit();
+        // 4. Recargo la página para mostrar el mensaje de bienvenida. 
+        header("Location: uno.php");
+        exit();
     }
-
-    var_dump($_GET);
+}
     // 6. Si Pincha el salir destruyo la sesión
     if (isset($_GET['logout'])){
         session_unset();
@@ -46,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
         header("Location: uno.php");
         exit();
     }
-}
+
 
 ?>
 <!DOCTYPE html>
