@@ -13,7 +13,7 @@
 session_start();
 
 // Tiempo de inactividad en segundos (5 minutos)
-$tiempo_inactividad = 1 * 10; // 10 segundos
+$tiempo_inactividad = 5 * 60; 
 
 // Verificar si hay actividad reciente
 if (isset($_SESSION['ultimoAcceso']) && (time() - $_SESSION['ultimoAcceso'] > $tiempo_inactividad)) {
@@ -39,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($usuario === 'admin' && $password === '1234') {
         // Regenerar el ID de sesión para mayor seguridad
         session_regenerate_id(true);
+        echo "<br> El nuevo identificador de sesión es: " . session_id();
 
         // Guardar el nombre de usuario en la sesión
         $_SESSION['usuario'] = $usuario;
