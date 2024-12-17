@@ -9,7 +9,7 @@
 session_start();
 
 $_SESSION['usuario'] = 'admin';
-setcookie('bienvenida', 'admin', time() + 86400, '/');
+setcookie('bienvenida', 'admin', time() + 86400, '/'); // Indica que la cookie se usará en todo el dominio
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['action'] === 'logout') {
     session_unset();
