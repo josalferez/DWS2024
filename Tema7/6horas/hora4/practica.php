@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Establecer cookie
         setcookie('bienvenida', $usuario, time() + 7 * 86400);
 
-        header("Location: practica.php");
+        header("Location: " . htmlspecialchars($_SERVER['PHP_SELF']));
         exit;
     } else {
         echo "Usuario o contraseña incorrectos.";
