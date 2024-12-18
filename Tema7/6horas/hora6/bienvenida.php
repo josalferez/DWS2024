@@ -1,8 +1,11 @@
 <?php
 session_name('idSesion');
-session_start();
+session_start(); // Me aseguro que la sesiónestá activa
 
+var_dump($_SESSION);
+var_dump($_COOKIE);
 if (!isset($_SESSION['usuario']) && isset($_COOKIE['bienvenida'])) {
+    echo "hola mundo";
     $mensaje = "¡Hola de nuevo, " . htmlspecialchars($_COOKIE['bienvenida']) . "!";
 } elseif (isset($_SESSION['usuario'])) {
     $mensaje = "Bienvenido, " . htmlspecialchars($_SESSION['usuario']) . "!";
@@ -10,9 +13,7 @@ if (!isset($_SESSION['usuario']) && isset($_COOKIE['bienvenida'])) {
     header("Location: index.php");
     exit;
 }
-var_dump($_SESSION);
 echo "<br>";
-var_dump($_COOKIE);
 ?>
 <!DOCTYPE html>
 <html lang="es">

@@ -7,7 +7,7 @@ if (isset($_SESSION['ultimo_acceso']) && (time() - $_SESSION['ultimo_acceso'] > 
     session_unset();
     session_destroy();
 }
-$_SESSION['ultimo_acceso'] = time();
+$_SESSION['ultimo_acceso'] = time(); // Controla el tiempo de inactividad
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $usuario = $_POST['usuario'] ?? '';
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['usuario'] = $usuario;
         setcookie('bienvenida', $usuario, time() + 7 * 86400, '/');
         header("Location: bienvenida.php");
-        exit;
+        exit; // Si no pones el exit continua el flujo del programa
     } else {
         $error = "Usuario o contraseña incorrectos.";
     }
