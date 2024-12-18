@@ -8,7 +8,7 @@
 session_start();
 
 $_SESSION['usuario'] = 'admin';
-setcookie('bienvenida', 'admin', time() + 86400); // Ruta no especificada
+setcookie('bienvenida', 'admin', time() + 86400, './es/'); // Ruta no especificada
 
 if ($_GET['action'] == 'logout') { // Sin comprobar si está definido
     session_unset();
@@ -17,5 +17,3 @@ if ($_GET['action'] == 'logout') { // Sin comprobar si está definido
     header("Location: sesionesCookiesFallos.php");
 }
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
