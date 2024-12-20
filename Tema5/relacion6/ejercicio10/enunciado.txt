@@ -10,5 +10,4 @@ El programa debe permitir al usuario realizar las siguientes acciones:
 
 Añadir un nuevo contacto.
 Listar todos los contactos.
-Guardar los contactos en un fichero.
-Cargar los contactos desde un fichero.
+

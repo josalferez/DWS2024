@@ -1,8 +1,8 @@
-
 /* Alinear el formulario al centro */
 form {
     /*max-width: 25%; -> Esto adapta el ancho del formulario a un tamaño fijo*/
-    width: max-content; /* -> Este sin embargo se adapta al tamaño del elemento más ancho del formulario*/
+    width: max-content;
+    /* -> Este sin embargo se adapta al tamaño del elemento más ancho del formulario*/
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -10,10 +10,11 @@ form {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-label{
+label {
     display: inline;
     width: 80px;
-    white-space: nowrap; /* Evita el salto de línea en los label con varias palabras*/ 
+    white-space: nowrap;
+    /* Evita el salto de línea en los label con varias palabras*/
 }
 
 input {
@@ -21,7 +22,7 @@ input {
     width: 100%;
 }
 
-button{
+button {
     font-size: 12px;
     font-weight: bold;
     position: relative;
@@ -31,11 +32,12 @@ button{
     border-radius: 6px;
     background: black;
     cursor: pointer;
-    display: block; /*Con esta línea y la de abajo centro el botón display: flex; tb valdría */
-    margin: 20px auto; 
+    display: block;
+    /*Con esta línea y la de abajo centro el botón display: flex; tb valdría */
+    margin: 20px auto;
 }
 
-button::before{
+button::before {
     content: "";
     position: absolute;
     top: 0;
@@ -43,37 +45,61 @@ button::before{
     z-index: -1;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        45deg, 
-        red, blue, deeppink, blue, red, blue, deeppink, blue
-    );
+    background: linear-gradient(45deg,
+            red, blue, deeppink, blue, red, blue, deeppink, blue);
     background-size: 800%;
     border-radius: 10px;
     filter: blur(8px);
     animation: glowing 20s linear infinite
 }
 
-@keyframes glowing{
+@keyframes glowing {
     0% {
         background-position: 0 0;
 
     }
+
     50% {
         background-position: 400% 0;
-        
+
     }
+
     100% {
         background-position: 0 0;
-        
+
     }
 }
 
-.centered-title { /* La creo para centrar los títulos de los formularios */
-    margin: 0 auto; /* Centro horizontal automático */
-    text-align: center; /* Alineación de texto si hay contenido adicional */
+.centered-title {
+    /* La creo para centrar los títulos de los formularios */
+    margin: 0 auto;
+    /* Centro horizontal automático */
+    text-align: center;
+    /* Alineación de texto si hay contenido adicional */
 }
 
+.button2 {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
 
+.button2:hover {
+    background-color: #3e8e41
+}
 
-
+.button2:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
 
