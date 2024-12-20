@@ -2,8 +2,6 @@
 session_name('idSesion');
 session_start(); // Me aseguro que la sesiónestá activa
 
-var_dump($_SESSION);
-var_dump($_COOKIE);
 if (!isset($_SESSION['usuario']) && isset($_COOKIE['bienvenida'])) {
     echo "hola mundo";
     $mensaje = "¡Hola de nuevo, " . htmlspecialchars($_COOKIE['bienvenida']) . "!";
