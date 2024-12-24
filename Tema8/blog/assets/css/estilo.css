@@ -1,0 +1,129 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1, h2, h3 {
+    color: #003366;
+}
+
+.container {
+    width: 98%;
+    margin: auto;
+}
+
+/* Header */
+header {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header h1 {
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Main */
+main {
+    display: flex;
+    margin-top: 20px;
+}
+
+.content {
+    flex: 2;
+    background: #fff;
+    padding: 20px;
+    margin-right: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content article {
+    margin-bottom: 20px;
+}
+
+.content button {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+aside {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.widget {
+    margin-bottom: 20px;
+}
+
+.widget h3 {
+    margin-bottom: 10px;
+}
+
+.widget form input,
+.widget form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.widget form button {
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    background: #333;
+    color: #fff;
+}
+
+/* Conexión */
+.mensaje {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px solid #00cc66;
+    background-color: #e6ffe6;
+    color: #00cc66;
+    font-weight: bold;
+}
+.errores {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px solid #cc0000;
+    background-color: #ffe6e6;
+    color: #cc0000;
+    font-weight: bold;
+}
