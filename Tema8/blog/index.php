@@ -28,7 +28,10 @@ $entradas = conseguirUltimasEntradas($db, true);
 </head>
 
 <body>
+    <!-- Añado el encabezado -->
 <?php require_once './requires/header.php'; ?>
+
+<!-- Añado el cuerpo de la página  -->
     <main class="container">
         <section class="content">
             <h2>Últimas entradas</h2>
@@ -57,9 +60,8 @@ $entradas = conseguirUltimasEntradas($db, true);
                 </form>
             </div>
             <?php
+            
             // Si el usuario ha hecho login correctamente, no mostramos ni el formulario de login ni el de registro
-            $uno = 0;
-            // if ($uno == 1) {
             if ($_SESSION['loginExito'] !== true) { ?>
                 <div class="widget">
                     <h3>Identifícate</h3>
@@ -104,6 +106,7 @@ $entradas = conseguirUltimasEntradas($db, true);
 
         </aside>
     </main>
+        <!-- Añado el pie de página -->
 <?php require_once './requires/footer.php'; ?>
 
 </body>

@@ -23,11 +23,7 @@ require_once 'conexion.php';
                         <button type="submit">Buscar</button>
                     </form>
                 </li>
-            <ul>
-
             </ul>
-
-
         </nav>
     </div>
 </header>
