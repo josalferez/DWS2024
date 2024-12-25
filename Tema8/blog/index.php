@@ -104,7 +104,7 @@ $entradas = conseguirUltimasEntradas($db, true);
 
         </aside>
     </main>
-
+<?php require_once './requires/footer.php'; ?>
 
 </body>
 
