@@ -1,9 +1,19 @@
 <?php // Iniciamos una session
 session_start();
 
+require_once './requires/conexion.php';
+require_once './acciones/conseguirCategorias.php';
+require_once './acciones/conseguirUltimasEntradas.php';
+
 // Inicializamos la variable de sesión 'loginExito' si no está definida
 if (!isset($_SESSION['loginExito']))
     $_SESSION['loginExito'] = false;
+
+// Cargamos las categorías
+$categorias = conseguirCategorias($db);
+
+// Obtenemos las últimas entradas
+$entradas = conseguirUltimasEntradas($db, true);
 ?>
 
 
@@ -13,7 +23,7 @@ if (!isset($_SESSION['loginExito']))
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog de Videojuegos</title>
+    <title>PROYECTO DWES</title>
     <link rel="stylesheet" href="./assets/css/estilo.css">
 </head>
 
@@ -24,9 +34,13 @@ if (!isset($_SESSION['loginExito']))
             <nav>
                 <ul>
                     <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Acción</a></li>
-                    <li><a href="#">Rol</a></li>
-                    <li><a href="#">Deportes</a></li>
+                    <?php if (!empty($categorias)): ?>
+                        <?php foreach ($categorias as $categoria): ?>
+                            <li><a href="categoria.php?id=<?= $categoria['id'] ?>"><?= htmlspecialchars($categoria['nombre']) ?></a></li>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <li><a href="#">Sin categorías</a></li>
+                    <?php endif; ?>
                     <li><a href="#">Responsabilidad</a></li>
                     <li><a href="#">Contacto</a></li>
                 </ul>
@@ -36,18 +50,18 @@ if (!isset($_SESSION['loginExito']))
     <main class="container">
         <section class="content">
             <h2>Últimas entradas</h2>
-            <article>
-                <h3>Título de mi entrada</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat est sit amet sapien sodales, ac lacinia est vehicula. Sed luctus sit amet mi vitae lobortis.</p>
-            </article>
-            <article>
-                <h3>Título de mi entrada</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat est sit amet sapien sodales, ac lacinia est vehicula. Sed luctus sit amet mi vitae lobortis.</p>
-            </article>
-            <article>
-                <h3>Título de mi entrada</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat est sit amet sapien sodales, ac lacinia est vehicula. Sed luctus sit amet mi vitae lobortis.</p>
-            </article>
+            <?php if (!empty($entradas)): ?>
+                <?php foreach ($entradas as $entrada): ?>
+                    <article class="entrada">
+                        <h3><?= htmlspecialchars($entrada['titulo']) ?></h3>
+                        <span class="categoria"><?= htmlspecialchars($entrada['categoria']) ?> | <?= htmlspecialchars($entrada['fecha']) ?></span>
+                        <p><?= htmlspecialchars($entrada['descripcion']) ?></p>
+                        <a href="entrada.php?id=<?= $entrada['id_entrada'] ?>" class="boton">Leer más</a>
+                    </article>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>No hay entradas disponibles.</p>
+            <?php endif; ?>
             <button>Ver todas las entradas</button>
         </section>
         <aside>
@@ -85,12 +99,20 @@ if (!isset($_SESSION['loginExito']))
             ?>
                 <div class="widget">
                     <h1>Autor</h1>
-                    <form action="">
+                    <form action="./acciones/crearEntrada.php" method="post">
                         <button>Crear entrada</button>
+                    </form>
+                    <form action="./acciones/crearCategoria.php" method="post">
                         <button>Crear categoría</button>
+                    </form>
+                    <form action="./acciones/formularioUsuario.php" method="post">
                         <button>Mis datos</button>
+                    </form>
+                    <!-- Si pulsa en cerrar sesión, se redirige a la página de cerrar sesión -->
+                    <form action="./requires/cerrarSesion.php" method="post">
                         <button>Cerrar sesión</button>
                     </form>
+
                 </div>
 
             <?php

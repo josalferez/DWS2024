@@ -55,8 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errores['general'] = "Error al registrar el usuario: " . $e->getMessage();
         }
     // Y destruimos la sesión para que el formulario vuelva a aparecer vacío
-
-    
     session_destroy();
     }
 }
