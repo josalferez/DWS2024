@@ -34,12 +34,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Crear Categoría</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
+    <?php require_once '../requires/header.php'; ?>
     <div class="container">
         <h1>Crear Categoría</h1>
         <form action="crearCategoria.php" method="POST">
@@ -57,5 +60,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php endif; ?>
     </div>
 </body>
-</html>
 
+</html>

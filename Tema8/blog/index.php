@@ -28,25 +28,7 @@ $entradas = conseguirUltimasEntradas($db, true);
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <h1>Blog de 2º DAW</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <?php if (!empty($categorias)): ?>
-                        <?php foreach ($categorias as $categoria): ?>
-                            <li><a href="categoria.php?id=<?= $categoria['id'] ?>"><?= htmlspecialchars($categoria['nombre']) ?></a></li>
-                        <?php endforeach; ?>
-                    <?php else: ?>
-                        <li><a href="#">Sin categorías</a></li>
-                    <?php endif; ?>
-                    <li><a href="#">Responsabilidad</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<?php require_once './requires/header.php'; ?>
     <main class="container">
         <section class="content">
             <h2>Últimas entradas</h2>
@@ -56,13 +38,15 @@ $entradas = conseguirUltimasEntradas($db, true);
                         <h3><?= htmlspecialchars($entrada['titulo']) ?></h3>
                         <span class="categoria"><?= htmlspecialchars($entrada['categoria']) ?> | <?= htmlspecialchars($entrada['fecha']) ?></span>
                         <p><?= htmlspecialchars($entrada['descripcion']) ?></p>
-                        <a href="entrada.php?id=<?= $entrada['id_entrada'] ?>" class="boton">Leer más</a>
+                        <a href="./acciones/verEntrada.php?id=<?= $entrada['id_entrada'] ?>" class="boton">Leer más</a>
                     </article>
                 <?php endforeach; ?>
             <?php else: ?>
                 <p>No hay entradas disponibles.</p>
             <?php endif; ?>
-            <button>Ver todas las entradas</button>
+            <form action="./acciones/listarEntradas.php" method="post">
+                <button>Ver todas las entradas</button>
+            </form>
         </section>
         <aside>
             <div class="widget">

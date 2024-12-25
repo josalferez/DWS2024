@@ -3,7 +3,7 @@
 session_start();
 if (!isset($_SESSION['usuario'])) {
     // Redirige al login si no hay sesión activa
-    header('Location: login.php');
+    header('Location: ../login.php');
     exit;
 }
 
@@ -101,9 +101,10 @@ $categorias = conseguirCategorias($db);
 <head>
     <meta charset="UTF-8">
     <title><?= isset($id_entrada) ? 'Editar Entrada' : 'Nueva Entrada' ?></title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/estilo.css">
 </head>
 <body>
+<?php require_once './requires/header.php'; ?>
     <div class="container">
         <h1><?= isset($id_entrada) ? 'Editar Entrada' : 'Crear Nueva Entrada' ?></h1>
         <form action="crearEntrada.php<?= isset($id_entrada) ? '?id=' . $id_entrada : '' ?>" method="POST">
