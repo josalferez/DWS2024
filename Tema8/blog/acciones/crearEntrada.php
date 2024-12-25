@@ -104,7 +104,7 @@ $categorias = conseguirCategorias($db);
     <link rel="stylesheet" href="../assets/css/estilo.css">
 </head>
 <body>
-<?php require_once './requires/header.php'; ?>
+<?php require_once '../requires/header.php'; ?>
     <div class="container">
         <h1><?= isset($id_entrada) ? 'Editar Entrada' : 'Crear Nueva Entrada' ?></h1>
         <form action="crearEntrada.php<?= isset($id_entrada) ? '?id=' . $id_entrada : '' ?>" method="POST">

@@ -170,3 +170,17 @@ footer {
 .entrada .boton:hover {
     background-color: #0056b3;
 }
+
+/* Estilo botones Editar y Borrar entrada */
+td a {
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #007bff;
+}
+
+td a:hover {
+    background-color: #0056b3;
+}

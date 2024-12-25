@@ -19,7 +19,7 @@ $usuario = $_SESSION['usuario']; // Datos del usuario logueado
 <head>
     <meta charset="UTF-8">
     <title>Actualizar Perfil</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/css/estilo.css">
 </head>
 
 <body>

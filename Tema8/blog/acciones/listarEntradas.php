@@ -6,7 +6,7 @@ require_once '../requires/conexion.php';
 // Consultar todas las entradas
 try {
     $sql = "SELECT e.id, e.titulo, e.descripcion, c.nombre AS categoria, 
-                   u.nombre AS autor, e.fecha 
+                   u.nombre AS autor, u.id AS usuario_id, e.fecha 
             FROM entradas e
             INNER JOIN categorias c ON e.categoria_id = c.id
             INNER JOIN usuarios u ON e.usuario_id = u.id
@@ -17,6 +17,7 @@ try {
 } catch (PDOException $e) {
     die("Error al obtener las entradas: " . $e->getMessage());
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +31,7 @@ try {
 </head>
 
 <body>
-    <?php require_once './requires/header.php'; ?>
+    <?php require_once '../requires/header.php'; ?>
 
     <main>
         <?php if (!empty($entradas)): ?>
@@ -52,9 +53,16 @@ try {
                             <td><?= htmlspecialchars($entrada['categoria']) ?></td>
                             <td><?= htmlspecialchars($entrada['autor']) ?></td>
                             <td><?= htmlspecialchars($entrada['fecha']) ?></td>
+                            <?php if (isset($_SESSION['usuario']) && $_SESSION['usuario']['id'] == $entrada['usuario_id']): ?>
+                                <td>
+                                    <a href="editarEntrada.php?id=<?= $entrada['id'] ?>">Editar</a>
+                                    <a href="borrarEntrada.php?id=<?= $entrada['id'] ?>" onclick="return confirm('¿Estás seguro de querer borrar esta entrada?')">Borrar</a>
+                                </td>
+                            <?php endif; ?>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
+
             </table>
         <?php else: ?>
             <p>No hay entradas disponibles.</p>
