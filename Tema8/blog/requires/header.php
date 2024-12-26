@@ -17,7 +17,7 @@ require_once 'conexion.php';
                 <li><a href="#">Responsabilidad</a></li>
                 <li><a href="#">Contacto</a></li>
                 <li style="float: right;">
-                    <form action="buscar.php" method="GET" style="display: inline;">
+                    <form action="./buscar.php" method="GET" style="display: inline;">
                         <label for="query">Buscar:</label>
                         <input type="text" id="query" name="query" placeholder="Buscar por título" required>
                         <button type="submit">Buscar</button>

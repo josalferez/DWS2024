@@ -1,7 +1,11 @@
 <?php // Iniciamos una session
 session_start();
 
-require_once './requires/conexion.php';
+// Define la ruta base del proyecto
+define('BASE_PATH', __DIR__ . '\\'); 
+
+require_once BASE_PATH . 'requires\conexion.php';
+//require_once './requires/conexion.php';
 require_once './acciones/conseguirCategorias.php';
 require_once './acciones/conseguirUltimasEntradas.php';
 

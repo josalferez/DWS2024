@@ -44,7 +44,7 @@ try {
     <?php require_once '../requires/header.php'; ?>
 
     <main>
-        <h1>Resultados de Búsqueda para "<?= htmlspecialchars($termino) ?>"</h1>
+        <h1>Resultados de Búsqueda para "<?= htmlspecialchars($termino) ?>"</h1><br>
 
         <?php if (!empty($resultados)): ?>
             <table>
