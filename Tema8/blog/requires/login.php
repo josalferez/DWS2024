@@ -1,6 +1,6 @@
 <?php
 // Nos aseguramos de que la sesión esté iniciada
-session_start(); // Iniciar sesión
+session_start(); 
 
 // Borrar errores antiguos
 if (isset($_SESSION['error_login'])) {

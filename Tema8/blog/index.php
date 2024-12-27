@@ -1,13 +1,8 @@
 <?php // Iniciamos una session
 session_start();
 
-// Define la ruta base del proyecto
-define('BASE_PATH', __DIR__ . '\\'); 
-
-require_once BASE_PATH . 'requires\conexion.php';
-//require_once './requires/conexion.php';
-require_once './acciones/conseguirCategorias.php';
-require_once './acciones/conseguirUltimasEntradas.php';
+// Defino BASE_PATH y los requires
+require_once 'config.php';
 
 // Inicializamos la variable de sesión 'loginExito' si no está definida
 if (!isset($_SESSION['loginExito']))
@@ -20,20 +15,18 @@ $categorias = conseguirCategorias($db);
 $entradas = conseguirUltimasEntradas($db, true);
 ?>
 
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROYECTO DWES</title>
-    <link rel="stylesheet" href="./assets/css/estilo.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
 </head>
 
 <body>
-    <!-- Añado el encabezado -->
-<?php require_once './requires/header.php'; ?>
+    <!-- Añado la cabecera -->
+<?php require_once BASE_PATH . 'requires\header.php'; ?>
 
 <!-- Añado el cuerpo de la página  -->
     <main class="container">
@@ -111,7 +104,7 @@ $entradas = conseguirUltimasEntradas($db, true);
         </aside>
     </main>
         <!-- Añado el pie de página -->
-<?php require_once './requires/footer.php'; ?>
+<?php require_once BASE_PATH . 'requires\footer.php'; ?>
 
 </body>
 

@@ -3,6 +3,7 @@ session_start();
 require_once '../requires/conexion.php';
 require_once '../requires/funciones.php';
 
+
 // Obtener el ID de la categoría desde la URL
 $categoria_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
