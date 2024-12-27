@@ -2,7 +2,11 @@
 session_start();
 
 // Defino BASE_PATH y los requires
-require_once 'config.php';
+require_once 'requires/config.php';
+require_once 'requires/conexion.php';
+require_once 'requires/funciones.php';
+require_once 'acciones/conseguirCategorias.php';
+require_once 'acciones/conseguirUltimasEntradas.php';
 
 // Inicializamos la variable de sesión 'loginExito' si no está definida
 if (!isset($_SESSION['loginExito']))
@@ -38,13 +42,13 @@ $entradas = conseguirUltimasEntradas($db, true);
                         <h3><?= htmlspecialchars($entrada['titulo']) ?></h3>
                         <span class="categoria"><?= htmlspecialchars($entrada['categoria']) ?> | <?= htmlspecialchars($entrada['fecha']) ?></span>
                         <p><?= htmlspecialchars($entrada['descripcion']) ?></p>
-                        <a href="./acciones/verEntrada.php?id=<?= $entrada['id_entrada'] ?>" class="boton">Leer más</a>
+                        <a href="acciones/verEntrada.php?id=<?= $entrada['id_entrada'] ?>" class="boton">Leer más</a>
                     </article>
                 <?php endforeach; ?>
             <?php else: ?>
                 <p>No hay entradas disponibles.</p>
             <?php endif; ?>
-            <form action="./acciones/listarEntradas.php" method="post">
+            <form action="acciones/listarEntradas.php" method="post">
                 <button>Ver todas las entradas</button>
             </form>
         </section>

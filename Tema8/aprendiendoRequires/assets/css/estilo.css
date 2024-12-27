@@ -1,0 +1,13 @@
+
+
+body{
+    text-align: center;
+    padding: 20px;
+    color: #333;
+}
+
+.highlight {
+    color: red;
+    font-weight: bold;
+    font-size: 2em;
+}
