@@ -14,13 +14,16 @@ if (!isset($_SESSION['loginExito']))
 
 // Cargamos las categorías
 $categorias = conseguirCategorias($db);
+var_dump($categorias);
 
 // Obtenemos las últimas entradas
 $entradas = conseguirUltimasEntradas($db, true);
+var_dump($entradas);
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,10 +32,34 @@ $entradas = conseguirUltimasEntradas($db, true);
 </head>
 
 <body>
-    <!-- Añado la cabecera -->
-<?php require_once BASE_PATH . 'requires\header.php'; ?>
+    <header>
+        <div class="container">
+            <h1>Blog de 2º DAW</h1>
+            <nav>
+                <ul>
+                    <li><a href="<?php echo BASE_PATH; ?>index.php">Inicio</a></li>
+                    <?php if (!empty($categorias)): ?>
+                        <?php foreach ($categorias as $categoria): ?>
+                            <li><a href="acciones/entradasCategoria.php?id=<?= $categoria['id'] ?>"><?= htmlspecialchars($categoria['nombre']) ?></a></li>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <li><a href="#">Sin categorías</a></li>
+                    <?php endif; ?>
+                    <li><a href="#">Responsabilidad</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li style="float: right;">
+                        <form action="<?php BASE_PATH . 'acciones/buscar.php' ?>" method="GET" style="display: inline;">
+                            <label for="query">Buscar:</label>
+                            <input type="text" id="query" name="query" placeholder="Buscar por título" required>
+                            <button type="submit">Buscar</button>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<!-- Añado el cuerpo de la página  -->
+    <!-- Añado el cuerpo de la página  -->
     <main class="container">
         <section class="content">
             <h2>Últimas entradas</h2>
@@ -61,7 +88,7 @@ $entradas = conseguirUltimasEntradas($db, true);
                 </form>
             </div>
             <?php
-            
+
             // Si el usuario ha hecho login correctamente, no mostramos ni el formulario de login ni el de registro
             if ($_SESSION['loginExito'] !== true) { ?>
                 <div class="widget">
@@ -107,9 +134,10 @@ $entradas = conseguirUltimasEntradas($db, true);
 
         </aside>
     </main>
-        <!-- Añado el pie de página -->
-<?php require_once BASE_PATH . 'requires\footer.php'; ?>
-
+    <!-- Añado el pie de página -->
+    <footer>
+        <p>Página realizada por J. Alf Piñ 2024-2025 IES F. Ayala </p>
+    </footer>
 </body>
 
 </html>
