@@ -1,0 +1,4 @@
+Usa el fichero scriptTiendaSQL.txt para crear toda la estructura de la base de datos empresa, 
+Crea una tabla usuarios que tenga id, usuario y contraseña
+Puedes usar la estructura y los ficheros que te proporciono, pero ojo, contienen errores. Identifícalos, arréglalos y sube el resultado del proyecto a la 
+entrega correspondiente en moodle. 
