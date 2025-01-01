@@ -1,0 +1,43 @@
+Crea en phpmyadmin la base de datos pedidos y añade estas tablas:
+
+CREATE TABLE restaurantes (
+    CodRes INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100) NOT NULL,
+    Telefono VARCHAR(15),
+    Direccion VARCHAR(255)
+);
+
+-- Crear la tabla de Categorías
+CREATE TABLE categorias (
+    CodCat INT AUTO_INCREMENT PRIMARY KEY,
+    Descripcion VARCHAR(200) NOT NULL
+);
+
+-- Crear la tabla de Productos
+CREATE TABLE productos (
+    CodProd INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100) NOT NULL,
+    Precio DECIMAL(10, 2) NOT NULL,
+    CodCat INT,
+    FOREIGN KEY (CodCat) REFERENCES categorias(CodCat)
+);
+
+-- Crear la tabla de Pedidos
+CREATE TABLE pedidos (
+    CodPed INT AUTO_INCREMENT PRIMARY KEY,
+    Fecha DATE NOT NULL,
+    CodRes INT,
+    Cliente VARCHAR(100),
+    FOREIGN KEY (CodRes) REFERENCES restaurantes(CodRes)
+);
+
+-- Crear la tabla de PedidosProductos
+CREATE TABLE pedidos_productos (
+    CodPed INT,
+    CodProd INT,
+    Cantidad INT NOT NULL,
+    PrecioUnitario DECIMAL(10, 2) NOT NULL,
+    PRIMARY KEY (CodPed, CodProd),
+    FOREIGN KEY (CodPed) REFERENCES pedidos(CodPed),
+    FOREIGN KEY (CodProd) REFERENCES productos(CodProd)
+);

@@ -10,7 +10,7 @@
     <form action="login.php" method="post">
         Usuario: <input type="text" name="usuario">
         Clave: <input type="password" name="clave">
-        <button type="submit">Enviar consulta</button>
+        <button type="submit">Iniciar Sesión</button>
     </form>
     <p>Usuario: madrid1@empresa.com <a href="home.php">Home</a> <a href="carrito.php">Ver carrito</a> <a href="logout.php">Cerrar sesión</a></p>
     
