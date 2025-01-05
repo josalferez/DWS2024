@@ -23,6 +23,11 @@ if (isset($_POST['producto'])) {
     $producto = $_POST['producto'];
 
     // Consulta para obtener el stock del producto seleccionado en cada tienda
+    // :producto Es un marcador de posición utilizado en consultas preparadas para evitar inyecciones SQL
+    // $pdo->prepare($sql); Usa el objeto $pdo para preparar la consulta SQL. Esto optimiza la ejecución y permite usar parámetros seguros (:producto).
+    // $stmt->execute([':producto' => $producto]); Ejecuta la consulta preparada y reemplaza el marcador :producto con el valor de la variable $producto.
+    // $stock = $stmt->fetchAll(PDO::FETCH_ASSOC); Recupera todas las filas resultantes de la consulta como un array asociativo. Cada fila representa una tienda con el stock del producto seleccionado.
+    // ¿Por qué se usa PDO::FETCH_ASSOC? Este modo devuelve las filas como arrays asociativos, donde las claves son los nombres de las columnas de la consulta SQL (en este caso, tienda y unidades).
     $sql = "SELECT tiendas.nombre AS tienda, stock.unidades 
             FROM tiendas 
             INNER JOIN stock ON tiendas.cod = stock.tienda 
