@@ -12,7 +12,10 @@
         Clave: <input type="password" name="clave">
         <button type="submit">Iniciar Sesión</button>
     </form>
-    <p>Usuario: madrid1@empresa.com <a href="home.php">Home</a> <a href="carrito.php">Ver carrito</a> <a href="logout.php">Cerrar sesión</a></p>
+    <p>Usuario: madrid1@empresa.com 
+        <a href="home.php">Home</a> 
+        <a href="carrito.php">Ver carrito</a> 
+        <a href="logout.php">Cerrar sesión</a></p>
     
     <!-- Lista de categorías -->
     <h2>Lista de categorías</h2>
