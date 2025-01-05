@@ -1,4 +1,12 @@
 <?php
+
+// Inicio sesión
+session_start();
+
+// Guardo el error de inicio de sesión
+$_SESSION['errorInicioSesion'] = $_SESSION['errorInicioSesion'] ?? 0;
+$_SESSION['ultimoIntento'] = $_SESSION['ultimoIntento'] ?? time(); // Guarda el tiempo del último intento
+
 // Incluir configuración y conexión
 require_once 'config/config.php';
 require_once 'lib/conexion.php';
@@ -8,7 +16,9 @@ $pdo = $conexion->getPdo();
 
 // Formulario de Registro
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
+    // Compruebo que el email es válido
     $email = filter_var(trim($_POST['email_register']), FILTER_VALIDATE_EMAIL);
+    // Quito los espacios en blanco al comienzo y final de la contraseña
     $password = trim($_POST['password_register']);
 
     if ($email && $password) {
@@ -16,8 +26,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
         $stmt->bindParam(':email', $email);
         $stmt->execute();
 
+        // Si no existe el email en la base de datos, se registra
         if ($stmt->rowCount() == 0) {
             $password_hash = password_hash($password, PASSWORD_BCRYPT);
+            // INSERT INTO tabla (columna1, columna2, ...) VALUES (valor1, valor2, ...);
             $stmt = $pdo->prepare("INSERT INTO usuarios (email, password_hash) VALUES (:email, :password_hash)");
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':password_hash', $password_hash);
@@ -32,7 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
 }
 
 // Formulario de Inicio de Sesión
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
+// Si inicia sesión de forma errónea 3 veces lo bloqueo durante 5 segundos
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login']) && $_SESSION['errorInicioSesion'] < 3) {
     $email = filter_var(trim($_POST['email_login']), FILTER_VALIDATE_EMAIL);
     $password = trim($_POST['password_login']);
 
@@ -44,9 +57,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
         if ($stmt->rowCount() == 1) {
             $user = $stmt->fetch();
             if (password_verify($password, $user['password_hash'])) {
-                echo "Inicio de sesión exitoso!";
+                $_SESSION['errorInicioSesion'] = 0;
+                header("Location: bienvenido.php");
+                exit();
             } else {
-                echo "Contraseña incorrecta.";
+                $_SESSION['errorInicioSesion']++;
+                $_SESSION['ultimoIntento'] = time(); // Registro la hora del último intento fallido
             }
         } else {
             echo "Email no registrado.";
@@ -55,6 +71,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
         echo "Por favor completa todos los campos de inicio de sesión.";
     }
 }
+
+// Si se superan los 3 intentos, bloqueamos por 20 segundos
+if ($_SESSION['errorInicioSesion'] >= 3) {
+    $tiempoRestante = time() - $_SESSION['ultimoIntento'];
+    if ($tiempoRestante < 5) {
+        // Bloquear al usuario durante 5 segundos
+        echo "<script>
+            setTimeout(function() {
+                window.location.reload();
+            }, 5000);
+        </script>";
+    } else {
+        // Si ya han pasado los 5 segundos, reseteamos los errores
+        $_SESSION['errorInicioSesion'] = 0;
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -74,12 +107,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
     <input type="submit" name="register" value="Registrar">
 </form>
 
-<h2>Iniciar Sesión</h2>
+<?php if ($_SESSION['errorInicioSesion'] < 3) {?>
+<h2>Iniciar Sesión</h2> 
 <form method="post">
     Email: <input type="email" name="email_login" required>
     Contraseña: <input type="password" name="password_login" required>
     <input type="submit" name="login" value="Iniciar Sesión">
 </form>
+<?php } else { ?>
+    <h2>Has superado el número de intentos permitidos. Por favor, espera 5 segundos.</h2>
 
+<?php } ?>
 </body>
 </html>

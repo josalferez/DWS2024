@@ -1,6 +1,6 @@
 <?php
 
-// usuario admin y contraseña 1234
+// usuario root y contraseña 1234
 
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root'); 
