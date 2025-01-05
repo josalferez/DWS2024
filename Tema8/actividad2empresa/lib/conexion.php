@@ -1,5 +1,7 @@
 <?php
 
+//Otra forma distinta a la que vimos en la actividad1 para hacer la conexión a la base de datos
+
 class Conexion {
     private $pdo;
 

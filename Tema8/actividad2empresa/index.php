@@ -3,11 +3,10 @@
 require_once 'config/config.php';
 require_once 'lib/conexion.php';
 
-echo DB_USERNAME . DB_PASSWORD . $_SERVER['REQUEST_METHOD'] . "<br>";
 $conexion = new Conexion();
 $pdo = $conexion->getPdo();
 
-// Manejo del registro
+// Formulario de Registro
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     $email = filter_var(trim($_POST['email_register']), FILTER_VALIDATE_EMAIL);
     $password = trim($_POST['password_register']);
@@ -32,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     }
 }
 
-// Manejo del inicio de sesión
+// Formulario de Inicio de Sesión
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
     $email = filter_var(trim($_POST['email_login']), FILTER_VALIDATE_EMAIL);
     $password = trim($_POST['password_login']);
