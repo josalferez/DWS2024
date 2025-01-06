@@ -1,5 +1,7 @@
 <?php
 
+//HASTA AQUÍ LO DEL ROL DEL ADMIN RESUELTO
+
 // Inicio sesión
 session_start();
 
