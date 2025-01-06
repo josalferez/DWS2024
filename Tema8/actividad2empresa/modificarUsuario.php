@@ -39,7 +39,6 @@
             header("Location: bienvenida.php");
             exit();
         } else {
-            var_dump($_SESSION);
         ?>
         <form method="post" action="modificarUsuario.php">
             <label for="email">Email:</label>
