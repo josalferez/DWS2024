@@ -3,8 +3,7 @@
 // Inicio sesión
 session_start();
 
-// Guardo el error de inicio de sesión
-$_SESSION['errorInicioSesion'] = $_SESSION['errorInicioSesion'] ?? 0;
+$_SESSION['errorInicioSesion'] = $_SESSION['errorInicioSesion'] ?? 0; // Guardo el error de inicio de sesión
 $_SESSION['ultimoIntento'] = $_SESSION['ultimoIntento'] ?? time(); // Guarda el tiempo del último intento
 
 // Incluir configuración y conexión
