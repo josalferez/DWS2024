@@ -6,7 +6,7 @@
 // Configuración de la conexión con PDO
 $dsn = "mysql:host=localhost;dbname=mistiendas;charset=utf8mb4";
 $username = "root"; // Pon aquí los valores de tu usuario y contraseña en mysql
-$password = "1234";
+$password = "";
 
 // Conecto a la base de datos con los datos guardados en las líneas anteriores	
 try {
@@ -21,7 +21,6 @@ try {
 // Si se envía el formulario
 if (isset($_POST['producto'])) {
     $producto = $_POST['producto'];
-
     // Consulta para obtener el stock del producto seleccionado en cada tienda
     // :producto Es un marcador de posición utilizado en consultas preparadas para evitar inyecciones SQL
     // $pdo->prepare($sql); Usa el objeto $pdo para preparar la consulta SQL. Esto optimiza la ejecución y permite usar parámetros seguros (:producto).
@@ -31,7 +30,7 @@ if (isset($_POST['producto'])) {
     $sql = "SELECT tiendas.nombre AS tienda, stock.unidades 
             FROM tiendas 
             INNER JOIN stock ON tiendas.cod = stock.tienda 
-            WHERE stock.producto = :producto";
+            WHERE stock.CodProducto = :producto";
     
     $stmt = $pdo->prepare($sql);
     $stmt->execute([':producto' => $producto]);
@@ -39,7 +38,7 @@ if (isset($_POST['producto'])) {
 }
 
 // Consulta para obtener todos los productos
-$sql = "SELECT cod, nombre FROM productos ORDER BY nombre";
+$sql = "SELECT * FROM productos ORDER BY nombre";
 $stmt = $pdo->query($sql);
 $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -60,7 +59,7 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <select name="producto" id="producto" required>
             <?php foreach ($productos as $prod): ?>
                 <option value="<?= htmlspecialchars($prod['cod']) ?>">
-                    <?= htmlspecialchars($prod['nombre']) ?>
+                    <?= htmlspecialchars($prod['nombre_corto']) ?>
                 </option>
             <?php endforeach; ?>
         </select>

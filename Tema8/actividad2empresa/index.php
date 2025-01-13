@@ -117,7 +117,6 @@ if ($_SESSION['errorInicioSesion'] >= 3) {
 </form>
 <?php } else { ?>
     <h2>Has superado el número de intentos permitidos. Por favor, espera 5 segundos.</h2>
-
 <?php } ?>
 </body>
 </html>
