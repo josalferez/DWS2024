@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['registro'])) {
 }
 
 // 6. Formulario de Inicio de Sesión
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login']) && $_SESSION['errorInicioSesion'] < 3) {
     // Comprobamos que el email es válido
     $email = filter_var(trim($_POST['email_login']), FILTER_VALIDATE_EMAIL);
     // Comprobamos que la contraeña es válida

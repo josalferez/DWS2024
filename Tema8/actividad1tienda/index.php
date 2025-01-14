@@ -1,20 +1,17 @@
 <?php
 
-//AVERIGUA POR QUÉ ESTE CÓDIGO NO FUNCIONA
-
-
-// Configuración de la conexión con PDO
-$dsn = "mysql:host=localhost;dbname=mistiendas;charset=utf8mb4";
+// Configuración de la conexión con PDO. 
+$dsn = "mysql:host=localhost;dbname=mistiendas;charset=utf8mb4"; // Definimos la cadena de conexión a la base de datos
 $username = "root"; // Pon aquí los valores de tu usuario y contraseña en mysql
-$password = "";
+$password = "1234";
 
 // Conecto a la base de datos con los datos guardados en las líneas anteriores	
 try {
-    $pdo = new PDO($dsn, $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = new PDO($dsn, $username, $password); // Instancion un objeto de la clase PDO
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Establezco el modo de error a excepción
     echo "Conexión exitosa";
 } catch (PDOException $e) {
-    die("Error al conectar a la base de datos: " . $e->getMessage());
+    die("Error al conectar a la base de datos: " . $e->getMessage()); // Si no se puede conectar a la base de datos muestro un mensaje de error
 }
 
 
