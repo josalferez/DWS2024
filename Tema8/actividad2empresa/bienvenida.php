@@ -11,9 +11,14 @@ $conexion = new Conexion();
 $pdo = $conexion->getPdo();
 
 ?>
+<head>
+    <title>Bienvenida</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Incluyendo el CSS -->
+</head>
 <body>
 <a href="index.php">Volver</a>
 <a href="modificarUsuario.php"> Modificar Usuario</a>
+<a href="cerrarSesion.php"> Cerrar Sesión</a>
 <?php
 
 if ($_SESSION['rol'] == 'admin') {

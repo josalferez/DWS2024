@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     // Compruebo que el email es válido
     $email = filter_var(trim($_POST['email_register']), FILTER_VALIDATE_EMAIL);
     // Quito los espacios en blanco al comienzo y final de la contraseña
-    $password = trim($_POST['password_register']); 
+    $password = trim($_POST['password_register']);
 
     if ($email && $password) {
         $stmt = $pdo->prepare("SELECT id FROM usuarios WHERE email = :email");

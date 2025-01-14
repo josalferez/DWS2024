@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<head>
+    <title>Eliminar Usuarios </title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Incluyendo el CSS -->
+</head>
 </head>
 
 <body>
@@ -69,9 +70,12 @@
     echo '</tr>';
     foreach ($usuarios as $usuario) {
         echo '<tr>';
-        echo '<td>' . $usuario['id'] . '</td>';
-        echo '<td>' . $usuario['email'] . '</td>';
-        echo '<td><form method="post" action="eliminarUsuario.php"><input type="hidden" name="id" value="' . $usuario['id'] . '"><input type="submit" name="eliminar" value="Eliminar"></form></td>';
+            echo '<td>' . $usuario['id'] . '</td>';
+            echo '<td>' . $usuario['email'] . '</td>';
+            echo '<td><form method="post" action="eliminarUsuario.php">
+                            <input type="hidden" name="id" value="' . $usuario['id'] . '">
+                            <input type="submit" name="eliminar" value="Eliminar">
+                        </form></td>';
         echo '</tr>';
     }
     echo '</table>';
