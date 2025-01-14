@@ -28,13 +28,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php if (isset($_GET["redirigido"])) { ?>
         <p>Haga login para continuar</p>
     <?php } ?>
-    <?php if (isset($err) and $err == TRUE) { ?>
-        <p>Revise usuario y contraseña</p>
-    <?php } ?>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
         <label for="usuario">Usuario</label>
-        <input value="<?php if (isset($usuario)) echo $usuario; ?>" id="usuario" name="usuario" type="text">
-        <br>
+        <input value="<?php 
+            if (isset($usuario) && !isset($err)) 
+                echo $usuario; 
+            else if (isset($err) && $err == TRUE ){
+                ?> Revise usuario o contraseña<?php 
+            } ?>" id="usuario" name="usuario" type="text">
+        
         <label for="clave">Clave</label>
         <input id="clave" name="clave" type="password">
         <br>

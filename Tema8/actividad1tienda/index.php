@@ -8,7 +8,7 @@ $password = "1234";
 // Conecto a la base de datos con los datos guardados en las líneas anteriores	
 try {
     $pdo = new PDO($dsn, $username, $password); // Instancion un objeto de la clase PDO
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Establezco el modo de error a excepción
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Establezco el modo de error en las consultas a la base de datos a excepción. Es decir, si se genera algún erro en la consulta, ese error se recogerá en un bloque try catch
     echo "Conexión exitosa";
 } catch (PDOException $e) {
     die("Error al conectar a la base de datos: " . $e->getMessage()); // Si no se puede conectar a la base de datos muestro un mensaje de error

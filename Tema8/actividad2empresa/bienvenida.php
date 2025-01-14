@@ -11,18 +11,23 @@ $conexion = new Conexion();
 $pdo = $conexion->getPdo();
 
 ?>
+<head>
+    <title>Bienvenida</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Incluyendo el CSS -->
+</head>
 <body>
 <a href="index.php">Volver</a>
 <a href="modificarUsuario.php"> Modificar Usuario</a>
+<a href="cerrarSesion.php"> Cerrar Sesión</a>
 <?php
+
 
 if ($_SESSION['rol'] == 'admin') {
     echo '<a href="eliminarUsuario.php">Eliminar Usuarios</a> ';
     echo '<a href="zona_admin.php">Zona admin</a>';
-    echo '<h1>Hola ' . $_SESSION['nombre'] . '</h1>';
-} else {
-    echo '<h1>Hola ' . $_SESSION['nombre'] . '</h1>';
 }
+
+echo '<h1>Hola ' . $_SESSION['nombre'] . '</h1>';
 ?>
 
 
