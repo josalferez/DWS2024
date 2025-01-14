@@ -48,13 +48,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login']) && $_SESSION[
     $password = trim($_POST['password_login']);
 
     if ($email && $password) {
-        //$stmt = $pdo->prepare("SELECT password_hash FROM usuarios WHERE email = :email");
         $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = :email");
         $stmt->bindParam(':email', $email);
         $stmt->execute();
 
         if ($stmt->rowCount() == 1) {
-            $user = $stmt->fetch();
+            $user = $stmt->fetch(); // 
             if (password_verify($password, $user['password_hash'])) {
                 $_SESSION['errorInicioSesion'] = 0;
                 $_SESSION['rol'] = $user['rol'];
