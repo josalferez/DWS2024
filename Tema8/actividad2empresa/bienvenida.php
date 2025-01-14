@@ -23,7 +23,7 @@ $pdo = $conexion->getPdo();
 
 
 if ($_SESSION['rol'] == 'admin') {
-    echo '<a href="eliminarUsuario.php">Eliminar Usuarios</a> ';
+    echo '<a href="eliminarUsuario2.php">Eliminar Usuarios</a> ';
     echo '<a href="zona_admin.php">Zona admin</a>';
 }
 
