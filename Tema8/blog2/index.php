@@ -1,11 +1,20 @@
+<?php
+// 1. Iniciamos sesión
+session_start();
+
+require_once 'requires/conexion.php';
+?>
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog de Videojuegos</title>
     <link rel="stylesheet" href="assets/css/estilo.css">
 </head>
+
 <body>
     <header>
         <h1>Blog de Videojuegos</h1>
@@ -49,19 +58,26 @@
             </div>
             <div class="login">
                 <h3>Identificate</h3>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Contraseña">
-                <button>Entrar</button>
+                <form method="POST" action="login.php">
+                    <input type="email" name="emailLogin" placeholder="Email">
+                    <input type="password" name="passwordLogin" placeholder="Contraseña">
+                    <button type="submit" name="login">Entrar</button>
+                </form>
             </div>
             <div class="register">
                 <h3>Registrate</h3>
-                <input type="text" placeholder="Nombre">
-                <input type="text" placeholder="Apellidos">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Contraseña">
-                <button>Registrar</button>
+                <?php if (isset($_SESSION['success_message']))
+                    echo $_SESSION['success_message']; ?>
+                <form method="POST" action="registro.php">
+                    <input type="text" name="nombreRegistro" placeholder="Nombre">
+                    <input type="text" name="apellidosRegistro" placeholder="Apellidos">
+                    <input type="email" name="emailRegistro" placeholder="Email">
+                    <input type="password" name="passwordRegistro" placeholder="Contraseña">
+                    <button type="submit" name="registro">Registrar</button>
+                </form>
             </div>
         </aside>
     </main>
 </body>
+
 </html>
