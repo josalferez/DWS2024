@@ -9,8 +9,9 @@ require_once 'acciones/conseguirCategorias.php';
 require_once 'acciones/conseguirUltimasEntradas.php';
 
 // Inicializamos la variable de sesión 'loginExito' si no está definida
-if (!isset($_SESSION['loginExito']))
-    $_SESSION['loginExito'] = false;
+//if (!isset($_SESSION['loginExito']))
+  //  $_SESSION['loginExito'] = false;
+$_SESSION['loginExito'] = $_SESSION['loginExito'] ?? false;
 
 // Cargamos las categorías
 $categorias = conseguirCategorias($db);
