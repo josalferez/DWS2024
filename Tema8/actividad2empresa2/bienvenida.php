@@ -10,6 +10,13 @@
     <title>Hoja de Bienvenida</title>
 </head>
 <body>
-    Hola <?php echo $_SESSION['email'];?>
+    <a href="logout.php">Cerrar Sesión</a>
+    <a href="modificarUsuario.php"> Modificar Usuario</a>
+    <?php if ($_SESSION['rol'] == 'admin') { ?>
+        <a href="">Zona Admin</a>
+        <a href="eliminarUsuario.php">Eliminar Usuario</a>
+    <?php }?>   
+    <br>
+    Hola <?php echo $_SESSION['nombre'];?>
 </body>
 </html>

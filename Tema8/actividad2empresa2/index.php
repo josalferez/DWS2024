@@ -55,12 +55,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login']) && $_SESSION[
         $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = :email");
         $stmt->bindParam(':email', $email);
         $stmt->execute();
-
+        
         if ($stmt->rowCount() == 1) {
             $user = $stmt->fetch();
             if (password_verify($password, $user['password_hash'])) {
                 $_SESSION['email'] = $email;
+                $_SESSION['nombre'] = $user['Nombre'];
                 $_SESSION['errorInicioSesion'] = 0;
+                $_SESSION['rol'] = $user['rol'];
                 header("Location: bienvenida.php");
                 exit();
             } else {
