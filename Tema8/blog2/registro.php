@@ -5,7 +5,7 @@ session_start();
 require_once 'requires/conexion.php';
 
 // 4. Si se ha enviado el formulario de registro 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['registro'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['botonRegistro'])) {
     // Comprobamos que el email es válido
     $email = filter_var(trim($_POST['emailRegistro']), FILTER_VALIDATE_EMAIL);
     // Comprobamos que la contraeña es válida
