@@ -3,6 +3,8 @@
 session_start();
 
 require_once 'requires/conexion.php';
+
+$_SESSION['loginExito'] = $_SESSION['loginExito'] ?? false;
 ?>
 
 <!DOCTYPE html>
@@ -81,7 +83,7 @@ require_once 'requires/conexion.php';
                 </div>
             <?php } else { ?>
                 <div>
-                    <form method="POST" action="index.php">
+                    <form method="POST" action="logout.php">
                         <button type="submit" name="botonCerrarSesion">Cerrar Sesión</button>
                     </form>
                 </div>
