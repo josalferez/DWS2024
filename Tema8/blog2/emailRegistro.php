@@ -18,7 +18,7 @@ function enviarCorreoSendinblue($destinatario, $nombreUsuario) {
         $mail->SMTPAuth = true;
         //$mail->Username = '840b74001@smtp-brevo.com'; // Tu correo en Sendinblue
         $mail->Username = 'jose.alferez.edu';
-        //$mail->Password = '6ch21bkvWKG4ZqrE'; // Clave API generada en Sendinblue
+        //$mail->Password = ''; // Clave API generada en Sendinblue
         $mail->Password = ''; // Con la contraseña de jose.alferez.edu funcionan los envíos de correos. 
                               // Con la cuenta de Brevo no funcionan los envíos de correos.
         //$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
