@@ -16,7 +16,7 @@ function enviarCorreoSendinblue($destinatario, $nombreUsuario) {
         $mail->Host = 'live.smtp.mailtrap.io';
         $mail->SMTPAuth = true;
         $mail->Username = 'smtp@mailtrap.io';
-        $mail->Password = 'ca50bd12511e888c10e09ee3594e6523'; 
+        $mail->Password = '**********e6523'; 
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
