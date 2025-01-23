@@ -3,7 +3,7 @@
     session_start();
 
     use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php'; // Asegúrate de que esta ruta sea correcta
 
@@ -13,16 +13,22 @@ function enviarCorreoSendinblue($destinatario, $nombreUsuario) {
     try {
         // Configuración del servidor SMTP de Sendinblue
         $mail->isSMTP();
-        $mail->Host = 'live.smtp.mailtrap.io';
+        $mail->Host = 'mail.juntadeandalucia.es';
+        //$mail->Host = 'smtp-relay.brevo.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'smtp@mailtrap.io';
-        $mail->Password = 'ca50bd12511e888c10e09ee3594e6523'; 
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = 587;
+        //$mail->Username = '840b74001@smtp-brevo.com'; // Tu correo en Sendinblue
+        $mail->Username = 'jose.alferez.edu';
+        //$mail->Password = ''; // Clave API generada en Sendinblue
+        $mail->Password = ''; // Con la contraseña de jose.alferez.edu funcionan los envíos de correos. 
+                              // Con la cuenta de Brevo no funcionan los envíos de correos.
+        //$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port = 465;
+        //$mail->Port = 587;
 
 
         // Configuración del correo
-        $mail->setFrom('no-reply@demomailtrap.com', 'Pruebas Mailtrap');
+        $mail->setFrom('jose.alferez.edu@juntadeandalucia.es', 'Blog de Videojuegos');
         $mail->addAddress($destinatario); // Destinatario
         $mail->isHTML(true);
         $mail->Subject = 'Confirmación de registro';
