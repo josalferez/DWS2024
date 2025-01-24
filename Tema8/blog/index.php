@@ -15,11 +15,8 @@ $_SESSION['loginExito'] = $_SESSION['loginExito'] ?? false;
 
 // Cargamos las categorías
 $categorias = conseguirCategorias($db);
-var_dump($categorias);
-
 // Obtenemos las últimas entradas
 $entradas = conseguirUltimasEntradas($db, true);
-var_dump($entradas);
 ?>
 
 <!DOCTYPE html>
