@@ -3,8 +3,7 @@
 // Conectamos con la base de datos
 $dsn = "mysql:host=localhost;dbname=pedidos;charset=utf8mb4";
 $username = "root";
-$password = "1234";
-
+$password = "";
 
 function leer_config($nombre, $esquema)
 {

@@ -36,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['botonRegistro'])) {
             $stmt->bindParam(':fecha', $fecha);
             $stmt->execute();
             $_SESSION['success_message'] = "Registro realizado con éxito";
+            require_once 'emailRegistro.php';
             header("Location: index.php");
             exit();
         } else {

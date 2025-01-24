@@ -72,7 +72,8 @@ $_SESSION['loginExito'] = $_SESSION['loginExito'] ?? false;
                 <div class="register">
                     <h3>Registrate</h3>
                     <?php if (isset($_SESSION['success_message']))
-                        echo $_SESSION['success_message']; ?>
+                        echo $_SESSION['success_message']; 
+                        echo $_SESSION['emailEnviado']; ?>
                     <form method="POST" action="registro.php">
                         <input type="text" name="nombreRegistro" placeholder="Nombre">
                         <input type="text" name="apellidosRegistro" placeholder="Apellidos">
