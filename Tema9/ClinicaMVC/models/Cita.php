@@ -1,6 +1,8 @@
 <?php
 namespace Models;
 
+use PDO;
+
 class Cita {
     private $id;
     private $paciente_id;

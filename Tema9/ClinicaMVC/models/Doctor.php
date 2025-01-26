@@ -1,6 +1,8 @@
 <?php
 namespace Models;
 
+use PDO;
+
 class Doctor {
     private $id;
     private $nombre;
