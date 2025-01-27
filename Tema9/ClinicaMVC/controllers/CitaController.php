@@ -1,6 +1,5 @@
 <?php 
 
-// controllers/CitaController.php
 namespace Controllers;
 
 use Models\Cita;

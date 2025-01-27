@@ -1,6 +1,5 @@
 <?php 
 
-// controllers/DoctorController.php
 namespace Controllers;
 
 use Models\Doctor;
