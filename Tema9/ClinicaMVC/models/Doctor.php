@@ -53,5 +53,15 @@ class Doctor {
         $stmt = $this->pdo->prepare("DELETE FROM doctores WHERE id = :id");
         return $stmt->execute(['id' => $id]);
     }
+
+    // Método para obtener el nombre de un doctor
+    public function getNombre(): string {
+        return $this->nombre;
+    }
+
+    // Método para modificar el nombre de un doctor
+    public function setNombre(string $nombre): void {
+        $this->nombre = $nombre;
+    }
 }
 ?>

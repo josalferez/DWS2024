@@ -3,32 +3,20 @@
 require 'conexion.php';
 require 'autoload.php';
 
-// Usamos el controlador de Paciente
+// Cargo los controladores
 use Controllers\PacienteController;
-
-// Instanciamos el controlador
-$pacienteController = new PacienteController();
-
-// Usamos el controlador de Doctor
 use Controllers\DoctorController;
-
-// Creamos una instancia de Doctor
-$doctorController = new DoctorController();
-
-
-// Usamos el controlador de Cita
 use Controllers\CitaController;
 
-// Creamos una instancia de Cita
+// Instanciamos los controladores
+$pacienteController = new PacienteController();
+$doctorController = new DoctorController();
 $citaController = new CitaController();
 
-// Llamamos al método para mostrar todos los pacientes
+// Mostramos todos los pacientes, doctores y citas. 
 $pacienteController->mostrarTodos();
-// Llamamos al método para mostrar todos los doctores
 $doctorController->mostrarTodos();
-
-// Llamamos al método para mostrar todas las citas
-//$citaController->mostrarTodos();
+$citaController->mostrarTodos();
 
 
 ?>
