@@ -11,13 +11,9 @@ require_once 'lib/autoloader.php';
 require_once __DIR__ . '/views/partials/header.php';
 
 use Controllers\PacienteController;
-use Controllers\DoctorController;
 
 $pacienteController = new PacienteController();
 $pacienteController->mostrarTodos();
-
-$doctorController = new DoctorController();
-$doctorController->mostrarTodos();
 
 // Incluyo el footer de la página
 require_once __DIR__ . '/views/partials/footer.php';
