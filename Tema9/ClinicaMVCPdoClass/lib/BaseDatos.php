@@ -1,7 +1,7 @@
 <?php
 // models/BaseDatos.php
 
-namespace Models;
+namespace Lib;
 
 use PDO;
 use PDOException;

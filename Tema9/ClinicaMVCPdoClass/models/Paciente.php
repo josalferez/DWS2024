@@ -3,6 +3,7 @@
 
 namespace Models;
 
+use Lib\BaseDatos;
 use PDO;
 
 class Paciente extends BaseDatos {
