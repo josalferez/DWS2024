@@ -34,5 +34,5 @@
         </div>
     </nav>
 
-    <!-- Contenedor principal -->
+    <!-- Abro el contenedor principal -->
     <div class="container mt-4">

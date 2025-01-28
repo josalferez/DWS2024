@@ -2,7 +2,6 @@
 // controllers/PacienteController.php
 
 namespace Controllers;
-
 use Models\Paciente;
 
 class PacienteController {
