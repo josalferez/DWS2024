@@ -1,7 +1,7 @@
 <?php
 // views/paciente/mostrar_todos.php
 
-require_once __DIR__ . '/../header.php';
+require_once __DIR__ . '/../partials/header.php';
 ?>
 <h2>MIS PACIENTES</h2>
 <?php
@@ -12,5 +12,5 @@ foreach ($todos_mis_pacientes as $paciente) {
 }
 ?>
 <?php
-require_once __DIR__ . '/../footer.php';
+require_once __DIR__ . '/../partials/footer.php';
 ?>
