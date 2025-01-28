@@ -36,4 +36,6 @@ class BaseDatos {
     public function getConnection() {
         return $this->connection;
     }
+
+    
 }

@@ -8,6 +8,10 @@ require_once 'config/config.php';
 require_once 'lib/autoloader.php';
 
 use Controllers\PacienteController;
+use Controllers\DoctorController;
 
 $pacienteController = new PacienteController();
 $pacienteController->mostrarTodos();
+
+$doctorController = new DoctorController();
+$doctorController->mostrarTodos();
