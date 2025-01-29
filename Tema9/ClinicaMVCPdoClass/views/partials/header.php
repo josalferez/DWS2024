@@ -1,5 +1,8 @@
 <?php
 // views/header.php
+
+use Models\Paciente;
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -21,18 +24,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        <a class="nav-link" href="/">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pacientes</a>
+                        <a class="nav-link" href="/paciente/mostrarTodos">Pacientes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Doctores</a>
+                        <!-- Enlazo al registro de pacientes -->
+                        <a class="nav-link" href=" /../ ">Registrar Paciente</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Abro el contenedor principal -->
+    <!-- Contenedor principal -->
     <div class="container mt-4">

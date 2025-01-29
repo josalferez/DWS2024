@@ -13,11 +13,24 @@ require_once __DIR__ . '/views/partials/header.php';
 use Controllers\PacienteController;
 use Controllers\DoctorController;
 
-$pacienteController = new PacienteController();
-$pacienteController->mostrarTodos();
+$action = $_GET['action'] ?? 'mostrarTodos'; // Acción por defecto
+$controller = new PacienteController();
 
-$doctorController = new DoctorController();
-$doctorController->mostrarTodos();
+// Enrutamiento básico
+switch ($action) {
+    case 'mostrarTodos':
+        $controller->mostrarTodos();
+        break;
+    case 'registro':
+        $controller->mostrarFormularioRegistro();
+        break;
+    case 'guardar':
+        $controller->guardar();
+        break;
+    default:
+        echo "Página no encontrada";
+        break;
+}
 
 // Incluyo el footer de la página
 require_once __DIR__ . '/views/partials/footer.php';
