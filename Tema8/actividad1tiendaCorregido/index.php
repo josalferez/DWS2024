@@ -1,8 +1,7 @@
 <?php
-// Configuración de la conexión con PDO
     $dsn = "mysql:host=localhost;dbname=mistiendas;charset=utf8mb4";
     $username = "root";
-    $password = "1234";
+    $password = "";
 
 try {
     $pdo = new PDO($dsn, $username, $password);
