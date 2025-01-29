@@ -1,0 +1,14 @@
+{
+    "name": "josalfrez/actividad2empresa2",
+    "autoload": {
+        "psr-4": {
+            "Josalfrez\\Actividad2empresa2\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jose"
+        }
+    ],
+    "require": {}
+}
