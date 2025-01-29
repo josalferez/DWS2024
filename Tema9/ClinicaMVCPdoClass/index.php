@@ -4,8 +4,11 @@
 // Incluyo el archivo de configuración
 require_once 'config/config.php';
 
+// Incluyo el vendor/autoload.php
+require_once 'vendor/autoload.php';
+
 //Incluyo el autoloader
-require_once 'lib/autoloader.php';
+//require_once 'lib/autoloader.php';
 
 // Incluyo la cabecera de la página
 require_once __DIR__ . '/views/partials/header.php';

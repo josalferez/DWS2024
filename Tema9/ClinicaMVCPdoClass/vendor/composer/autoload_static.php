@@ -15,12 +15,20 @@ class ComposerStaticInitbabc62a15325651a8afc649f369b2ee5
         array (
             'Kint\\' => 5,
         ),
+        'J' => 
+        array (
+            'JosAlf\\ClinicaMvc\\' => 18,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'Kint\\' => 
         array (
             0 => __DIR__ . '/..' . '/kint-php/kint/src',
+        ),
+        'JosAlf\\ClinicaMvc\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 

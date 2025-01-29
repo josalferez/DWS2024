@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Kint\\' => array($vendorDir . '/kint-php/kint/src'),
+    'JosAlf\\ClinicaMvc\\' => array($baseDir . '/src'),
 );

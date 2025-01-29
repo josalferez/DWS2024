@@ -1,5 +1,17 @@
 {
-    "require": {
-        "kint-php/kint": "^6.0"
-    }
+    "name": "jos-alf/clinica-mvc",
+    "description": "Clinica con pacientes",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "JosAlf\\ClinicaMvc\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jose Alférez",
+            "email": "jalfpin474@g.educaand.es"
+        }
+    ],
+    "require": {}
 }
