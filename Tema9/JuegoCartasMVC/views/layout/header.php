@@ -6,6 +6,7 @@ use Models\Paciente;
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@ use Models\Paciente;
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -27,7 +29,7 @@ use Models\Paciente;
                         <a class="nav-link" href="<?= BASE_URL ?>index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= BASE_URL ?>index.php">Barajar</a>
+                        <a class="nav-link" href="<?= BASE_URL ?>index.php?accion=mostrar&barajar=true">Barajar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= BASE_URL ?>index.php">Sacar una carta</a>
