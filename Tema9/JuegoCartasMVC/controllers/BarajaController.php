@@ -8,12 +8,15 @@ class BarajaController {
     private Baraja $baraja;
     private Pages $pages;
 
-    public function __construct() {
+    public function __construct(Pages $pages) {
         $this->baraja = new Baraja();
-        $this->pages = new Pages();
+        $this->pages = $pages;
     }
 
-    public function mostrarBaraja(): void {
+    public function mostrarBaraja(bool $barajar = false): void {
+        if ($barajar) {
+            $this->baraja->barajar();
+        }
         $mazo = $this->baraja->getBaraja();
         $this->pages->render('baraja/muestraBaraja', ['mazo' => $mazo]);
     }

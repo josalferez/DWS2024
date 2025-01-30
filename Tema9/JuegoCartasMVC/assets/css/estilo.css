@@ -1,0 +1,19 @@
+.cartas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.carta {
+    width: 100px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}

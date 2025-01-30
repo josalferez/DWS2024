@@ -1,25 +1,18 @@
 <?php
 namespace Controllers;
 
-class FrontController {
-    public static function main(): void {
-        if (isset($_GET['controller'])) {
-            $nombre_controlador = 'Controllers\\' . $_GET['controller'] . 'Controller';
-        } else {
-            $nombre_controlador = 'Controllers\\' . CONTROLLER_DEFAULT;
-        }
+use Lib\Pages;
 
-        if (class_exists($nombre_controlador)) {
-            $controlador = new $nombre_controlador();
-            if (isset($_GET['action']) && method_exists($controlador, $_GET['action'])) {
-                $action = $_GET['action'];
-                $controlador->$action();
-            } elseif (!isset($_GET['controller']) && !isset($_GET['action'])) {
-                $action_default = ACTION_DEFAULT;
-                $controlador->$action_default();
-            }
-        } else {
-            echo ErrorController::show_error404();
+class FrontController {
+    public static function main() {
+        $pages = new Pages(); // Se crea una instancia de Pages
+        $barajaController = new BarajaController($pages); // Se pasa al constructor
+
+        $accion = $_GET['accion'] ?? 'mostrar';
+        $barajar = isset($_GET['barajar']) && $_GET['barajar'] === 'true';
+
+        if ($accion === 'mostrar') {
+            $barajaController->mostrarBaraja($barajar);
         }
     }
 }
