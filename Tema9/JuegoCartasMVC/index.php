@@ -1,16 +1,9 @@
 <?php
-// index.php
+require_once 'autoloader.php';
+require_once 'config.php';
+require_once 'Views/layout/header.php';
 
-// Incluyo el vendor/autoload.php
-// require_once 'vendor/autoload.php';
+use Controllers\FrontController;
+FrontController::main();
 
-//Incluyo el autoloader
-require_once 'lib/autoloader.php';
-
-// Incluyo la cabecera de la página
-require_once __DIR__ . '/views/partials/header.php';
-
-
-// Incluyo el footer de la página
-require_once __DIR__ . '/views/partials/footer.php';
-
+require_once 'Views/layout/footer.php';

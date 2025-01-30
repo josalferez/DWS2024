@@ -1,13 +1,20 @@
 <?php
 namespace Controllers;
 
-use Models\Barajaes;
-use Lib\Pages; // Assuming you have a Lib/Pages.php for templating
+use Models\Baraja;
+use Lib\Pages;
 
 class BarajaController {
+    private Baraja $baraja;
+    private Pages $pages;
+
+    public function __construct() {
+        $this->baraja = new Baraja();
+        $this->pages = new Pages();
+    }
+
     public function mostrarBaraja(): void {
-        $baraja = new Barajaes();
-        $pages = new Pages();
-        $pages->render('baraja/muestraBaraja', ['mazo' => $baraja->getBaraja()]);
+        $mazo = $this->baraja->getBaraja();
+        $this->pages->render('baraja/muestraBaraja', ['mazo' => $mazo]);
     }
 }

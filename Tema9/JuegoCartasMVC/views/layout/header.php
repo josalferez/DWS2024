@@ -9,7 +9,7 @@ use Models\Paciente;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica MVC</title>
+    <title>Juego de la fortuna</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -24,7 +24,7 @@ use Models\Paciente;
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Inicio</a>
+                        <a class="nav-link" href="http://localhost/dashboard/DWS2024/Tema9/JuegoCartasMVC/index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/paciente/mostrarTodos">Pacientes</a>
