@@ -17,21 +17,23 @@ use Models\Paciente;
     <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Clínica MVC</a>
+            <a class="navbar-brand" href="<?= BASE_URL ?>index.php">Juego de la fortuna</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost/dashboard/DWS2024/Tema9/JuegoCartasMVC/index.php">Inicio</a>
+                        <a class="nav-link" href="<?= BASE_URL ?>index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/paciente/mostrarTodos">Pacientes</a>
+                        <a class="nav-link" href="<?= BASE_URL ?>index.php">Barajar</a>
                     </li>
                     <li class="nav-item">
-                        <!-- Enlazo al registro de pacientes -->
-                        <a class="nav-link" href=" /../ ">Registrar Paciente</a>
+                        <a class="nav-link" href="<?= BASE_URL ?>index.php">Sacar una carta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= BASE_URL ?>index.php">Repartir cartas a 2 jugadores</a>
                     </li>
                 </ul>
             </div>
