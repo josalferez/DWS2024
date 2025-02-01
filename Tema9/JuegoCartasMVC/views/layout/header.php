@@ -35,7 +35,7 @@ use Models\Paciente;
                         <a class="nav-link" href="<?= BASE_URL ?>index.php?accion=sacarCarta">Sacar una carta</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= BASE_URL ?>index.php">Repartir cartas a 2 jugadores</a>
+                        <a class="nav-link" href="<?= BASE_URL ?>index.php?accion=repartirCartas">Repartir cartas a jugadores</a>
                     </li>
                 </ul>
             </div>

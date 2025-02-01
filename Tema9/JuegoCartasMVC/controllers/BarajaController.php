@@ -29,4 +29,15 @@ class BarajaController {
             'mazo' => $mazoRestante
         ]);
     }
+
+    public function repartirCartas(): void {
+        $jugadores = $_POST['jugadores'] ?? null;
+
+        if ($jugadores) {
+            $montones = $this->baraja->repartir((int)$jugadores);
+            $this->pages->render('baraja/repartirCartas', ['montones' => $montones, 'jugadores' => $jugadores]);  
+        } else {
+            $this->pages->render('baraja/repartirCartas');
+        }
+    }
 }

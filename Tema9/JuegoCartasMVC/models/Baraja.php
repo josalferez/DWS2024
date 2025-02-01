@@ -27,7 +27,24 @@ class Baraja {
 
     // Saco la primera carta de la baraja y la elimino de la baraja
     public function sacarCarta(): ?Carta {
-        shuffle($this->cartas); // Primero la barajo
+        $this->barajar();
         return array_shift($this->cartas); 
+    }
+
+    public function repartir(int $jugadores): array {
+        if ($jugadores <= 0){
+            return [];
+        }
+
+        $montones = array_fill(0,$jugadores,[]);
+        $index = 0;
+
+        $this->barajar();
+
+        foreach ($this->cartas as $carta) {
+            $montones[$index % $jugadores][] = $carta;
+            $index++;
+        }
+        return $montones;
     }
 }

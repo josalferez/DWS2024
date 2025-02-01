@@ -16,6 +16,8 @@ class FrontController {
             $barajaController->mostrarBaraja($barajar);
         } elseif ($accion === 'sacarCarta'){
             $barajaController->sacarCarta();
+        } elseif ($accion==='repartirCartas') {
+            $barajaController->repartirCartas();
         }
     }
 
