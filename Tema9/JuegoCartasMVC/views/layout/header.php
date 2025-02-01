@@ -32,7 +32,7 @@ use Models\Paciente;
                         <a class="nav-link" href="<?= BASE_URL ?>index.php?accion=mostrar&barajar=true">Barajar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= BASE_URL ?>index.php">Sacar una carta</a>
+                        <a class="nav-link" href="<?= BASE_URL ?>index.php?accion=sacarCarta">Sacar una carta</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= BASE_URL ?>index.php">Repartir cartas a 2 jugadores</a>

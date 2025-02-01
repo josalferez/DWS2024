@@ -24,4 +24,10 @@ class Baraja {
     public function getBaraja() {
         return $this->cartas;
     }
+
+    // Saco la primera carta de la baraja y la elimino de la baraja
+    public function sacarCarta(): ?Carta {
+        shuffle($this->cartas); // Primero la barajo
+        return array_shift($this->cartas); 
+    }
 }

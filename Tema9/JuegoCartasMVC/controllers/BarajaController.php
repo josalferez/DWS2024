@@ -20,4 +20,13 @@ class BarajaController {
         $mazo = $this->baraja->getBaraja();
         $this->pages->render('baraja/muestraBaraja', ['mazo' => $mazo]);
     }
+
+    public function sacarCarta(): void {
+        $cartaSacada = $this->baraja->sacarCarta();
+        $mazoRestante = $this->baraja->getBaraja();
+        $this->pages->render('baraja/muestraBaraja', [
+            'cartaSacada' => $cartaSacada,
+            'mazo' => $mazoRestante
+        ]);
+    }
 }
