@@ -17,7 +17,9 @@ class BarajaController {
         if ($barajar) {
             $this->baraja->barajar();
         }
+        // Barajo las cartas y las guardo en mazo
         $mazo = $this->baraja->getBaraja();
+        // Muestro el mazo
         $this->pages->render('baraja/muestraBaraja', ['mazo' => $mazo]);
     }
 

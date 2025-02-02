@@ -2,13 +2,8 @@
 namespace Models;
 
 class Carta {
-    private int $numero;
-    private string $palo;
-
-    public function __construct(int $numero, string $palo) {
-        $this->numero = $numero;
-        $this->palo = $palo;
-    }
+    // Uso la nueva forma de constructor
+    public function __construct(private int $numero, private string $palo) {}
 
     public function getNumero(): int {
         return $this->numero;
