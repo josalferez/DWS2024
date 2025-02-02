@@ -12,8 +12,4 @@ class Carta {
     public function getPalo(): string {
         return $this->palo;
     }
-
-    public function __toString(): string {
-        return "{$this->numero} de {$this->palo}";
-    }
 }
