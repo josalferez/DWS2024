@@ -14,31 +14,41 @@ class BarajaController {
     }
 
     public function mostrarBaraja(bool $barajar = false): void {
+        
+        // 1. Usamos los métodos de la clase Baraja
         if ($barajar) {
             $this->baraja->barajar();
         }
-        // Barajo las cartas y las guardo en mazo
+            // Barajo las cartas y las guardo en mazo
         $mazo = $this->baraja->getBaraja();
-        // Muestro el mazo
+        
+        // 2. Mostramos la vista - Muestro el mazo
         $this->pages->render('baraja/muestraBaraja', ['mazo' => $mazo]);
     }
 
     public function sacarCarta(): void {
+
+        // 1. Usamos los métodos de la clase Baraja
         $cartaSacada = $this->baraja->sacarCarta();
         $mazoRestante = $this->baraja->getBaraja();
-        $this->pages->render('baraja/muestraBaraja', [
-            'cartaSacada' => $cartaSacada,
-            'mazo' => $mazoRestante
-        ]);
+
+        // 2. Mostramos la vista
+        $this->pages->render('baraja/muestraBaraja', ['cartaSacada' => $cartaSacada, 'mazo' => $mazoRestante]);
     }
 
     public function repartirCartas(): void {
+
+        // 1. Usamos los métodos de la clase baraja
         $jugadores = $_POST['jugadores'] ?? null;
 
         if ($jugadores) {
             $montones = $this->baraja->repartir((int)$jugadores);
+
+        // 2. Mostramos la vista
             $this->pages->render('baraja/repartirCartas', ['montones' => $montones, 'jugadores' => $jugadores]);  
         } else {
+        
+        // 2. O mostramos esta vista
             $this->pages->render('baraja/repartirCartas');
         }
     }
