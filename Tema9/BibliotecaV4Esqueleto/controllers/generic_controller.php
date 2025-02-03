@@ -2,7 +2,7 @@
 
 // CONTROLADOR DE ...
 include_once("models/generic_model.php");  // Modelos
-include_once("view.php");              // Plantilla de vistas
+include_once("views/view.php");              // Plantilla de vistas
 
 class GenericController
 {
