@@ -29,7 +29,7 @@
         private $db = null;     // Conexión con la base de datos
 
         public function __construct() {
-            $this->db = new mysqli("servidor-de-base-de-datos", "usuario", "password", "nombre-base-de-datos");
+            $this->db = new mysqli("localhost", "root", "", "biblioteca");
         }
 
 
