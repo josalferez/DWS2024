@@ -30,6 +30,9 @@
 
         public function __construct() {
             $this->db = new mysqli("localhost", "root", "", "biblioteca");
+            if ($this->db->connect_error) {
+                die("Error de conexión (" . $this->db->connect_errno . ") " . $this->db->connect_error);
+            }
         }
 
 
