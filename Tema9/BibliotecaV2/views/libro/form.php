@@ -29,7 +29,7 @@ echo "<form action = 'index.php' method = 'get'>
         Año:<input type='text' name='ano' value='".$ano."'><br>
         Número de páginas:<input type='text' name='numPaginas' value='".$numPags."'><br>";
 
-echo "Autores: <select name='autor[]' multiple size='3'>";
+echo "Autores: <select name='autor[]' multiple size='10'>";
 foreach ($todosLosAutores as $fila) {
     if (in_array($fila->idPersona, $autoresLibro))
         echo "<option value='$fila->idPersona' selected>$fila->nombre $fila->apellido</option>";
