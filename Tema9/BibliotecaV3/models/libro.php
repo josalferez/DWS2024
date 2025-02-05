@@ -34,7 +34,10 @@ class Libro extends Model
     {
         $correctos = 0;
         foreach ($autores as $idAutor) {
-            $correctos += $this->db->dataManipulation("INSERT INTO escriben(idLibro, idPersona) VALUES('$idLibro', '$idAutor')");
+            $result = $this->db->dataManipulation("INSERT INTO escriben(idLibro, idPersona) VALUES('$idLibro', '$idAutor')");
+            if ($result) {
+                $correctos++;
+            }
         }
         return $correctos;
     }
@@ -42,7 +45,7 @@ class Libro extends Model
     // Actualiza un libro (todo menos sus autores). Devuelve 1 si tiene éxito y 0 en caso de fallo.
     public function update($idLibro, $titulo, $genero, $pais, $ano, $numPaginas)
     {
-        $ok = $this->db->query("UPDATE libros SET
+        $ok = $this->db->dataManipulation("UPDATE libros SET
                                 titulo = '$titulo',
                                 genero = '$genero',
                                 pais = '$pais',
