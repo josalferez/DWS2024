@@ -70,4 +70,18 @@ class Libro extends Model
 					                    ORDER BY libros.titulo");
         return $result;
     }
+
+    // He tenido que sobrecargar este método para poder mostrar la lista de libros con los nombres de los autores
+    // Porque el getAll() de la clase Model devuelve solo los datos de la tabla libros pero no los autores.
+    public function getAll()
+    {
+        $sql = "SELECT libros.*, personas.nombre, personas.apellido
+            FROM libros
+            LEFT JOIN escriben ON libros.idLibro = escriben.idLibro
+            LEFT JOIN personas ON escriben.idPersona = personas.idPersona";
+
+
+        return $this->db->dataQuery($sql);
+    }
+
 }
