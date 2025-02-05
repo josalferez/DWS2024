@@ -1,5 +1,6 @@
 <?php
 // VISTA PARA LA LISTA DE LIBROS
+// views/libro/all.php
 
 // Recuperamos la lista de libros
 $listaLibros = $data["listaLibros"];
@@ -13,6 +14,8 @@ if (isset($data["error"])) {
   echo "<div style='color:red'>".$data["error"]."</div>";
 }
 
+// Vamos a meter el formulario de búsqueda de libros en un fichero buscar.php dentro de
+// /views/libro. Aquí lo incluiremos con un require_once.
 echo "<form action='index.php'>
         <input type='hidden' name='action' value='buscarLibros'>
         <input type='text' name='textoBusqueda'>

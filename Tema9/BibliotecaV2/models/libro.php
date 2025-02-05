@@ -1,10 +1,10 @@
 <?php
 
 // MODELO DE LIBROS
+// models/libro.php
 
 class Libro
 {
-
     private $db;
 
     // Constructor. Habilita la conexión con la base de datos.
@@ -27,7 +27,8 @@ class Libro
         return $listaLibros;
     }
 
-    // Obtiene un libro de la base de datos y lo devuelve como un objeto
+    // Obtiene un libro de la base de datos y lo devuelve como un objeto anónimo
+    // Cada columna de la tabla libros se convierte en una propiedad del objeto anónimo. 
     public function get($id)
     {
         $result = $this->db->query("SELECT * FROM libros WHERE libros.idLibro = '$id'");

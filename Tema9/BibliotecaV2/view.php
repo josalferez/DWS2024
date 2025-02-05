@@ -1,6 +1,7 @@
 <?php
 
 // PLANTILLA DE LAS VISTAS
+// view.php
 
 class View {
     public static function render($nombreVista, $data = null) {
@@ -9,4 +10,4 @@ class View {
         include("views/$nombreVista.php");
         include("views/footer.php");
     }
-}
+}   
