@@ -20,7 +20,5 @@ class FrontController {
             $barajaController->repartirCartas();
         }
     }
-
-
 }
 
