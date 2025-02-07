@@ -1,0 +1,8 @@
+Cambios con respecto a v2
+- index.php. No cambia. 
+- models/libro.php. Elimina el método get, getAll y delete porque los va a heredar de 
+  models/model.php. Explicación más detallada: https://iescelia.org/docs/dwes/_site/mvc/#modelo-de-libros-modelslibrophp-1
+- models/persona.php. Igual que libro.Ahora hereda de models/model.php por lo tanto elimina algunos métodos. 
+- db.php es una nueva clase que va a manejar de forma abstracta la base de datos. Como hacíamos nosotros en nuestros ejercicios. 
+  Un buen cambio sería sustituir la clase mysqli por PDO. 
+- config.php vamos a guardar las variables de conexión a la base de datos
