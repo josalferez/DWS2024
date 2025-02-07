@@ -1,7 +1,9 @@
 <?php
+// CONTROLADOR DE AUTORES
 
-include_once("models/persona.php");
-include_once("view.php");
+namespace Controllers;
+
+use Views\View;
 
 class AutoresController {
         // --------------------------------- MOSTRAR LISTA DE AUTORES ----------------------------------------

@@ -1,8 +1,12 @@
 <?php
-
 // MODELO DE PERSONAS
 
+namespace Models;
+
+
 include_once "model.php";
+
+
 
 class Persona extends Model {
 

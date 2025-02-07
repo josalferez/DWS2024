@@ -7,6 +7,7 @@
 
 // En esta implementación, usaremos variables de sesión para la autenticación de usuarios
 // y limpieza de variables sencilla basada en una lista de palabras y caracteres prohibidos. 
+namespace Models;
 
 class Seguridad {
 

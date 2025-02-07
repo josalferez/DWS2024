@@ -1,10 +1,12 @@
 <?php
 //controllers/libros_controller.php
+namespace Controllers;
 
 // CONTROLADOR DE LIBROS
-include_once("models/libro.php");  // Modelos
-include_once("models/persona.php");
-include_once("view.php");
+use Models\Libro;
+use Models\Persona;
+use Views\View;
+use Models\Seguridad;
 
 class LibrosController
 {

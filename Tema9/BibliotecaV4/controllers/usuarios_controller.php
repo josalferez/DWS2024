@@ -1,14 +1,18 @@
 <?php
+// CONTROLADOR DE USUARIOS
+namespace Controllers;
 
-include_once "models/usuario.php";
-include_once "models/libro.php";
+use Models\Libro;
+use Models\Persona;
+use Views\View;
+use Models\Seguridad;
 
 class UsuariosController {
 
     private $usuario;
 
     public function __construct() {
-        $this->usuario = new Usuario();
+        $this->usuario = new Persona();
     }
 
     // Muestra el formulario de login
