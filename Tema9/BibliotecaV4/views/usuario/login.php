@@ -7,6 +7,8 @@ if (isset($data["error"])) {
 if (isset($data["info"])) {
     echo "<div style='color: blue'>".$data["info"]."</div>";
 }
+
+
 ?>
 
 <form action="index.php" method="get">
