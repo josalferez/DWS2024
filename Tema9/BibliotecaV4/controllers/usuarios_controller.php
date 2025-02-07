@@ -3,16 +3,16 @@
 namespace Controllers;
 
 use Models\Libro;
-use Models\Persona;
 use Views\View;
 use Models\Seguridad;
+use Models\Usuario;
 
 class UsuariosController {
 
     private $usuario;
 
     public function __construct() {
-        $this->usuario = new Persona();
+        $this->usuario = new Usuario();
     }
 
     // Muestra el formulario de login

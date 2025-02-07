@@ -4,7 +4,7 @@ namespace Controllers;
 
 // CONTROLADOR DE LIBROS
 use Models\Libro;
-use Models\Persona;
+use Models\Autor;
 use Views\View;
 use Models\Seguridad;
 
@@ -16,7 +16,7 @@ class LibrosController
     public function __construct()
     {
         $this->libro = new Libro();
-        $this->autor = new Persona();
+        $this->autor = new Autor();
     }
 
     // --------------------------------- MOSTRAR LISTA DE LIBROS ----------------------------------------

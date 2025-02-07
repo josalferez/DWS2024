@@ -6,11 +6,6 @@
 
 namespace Models;
 
-include_once "model.php";
-
-
-
-
 class Usuario extends Model
 {
 
