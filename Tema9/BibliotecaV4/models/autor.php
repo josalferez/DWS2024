@@ -1,15 +1,19 @@
 <?php
-
 // MODELO DE PERSONAS
+
+namespace Models;
+
 
 include_once "model.php";
 
-class Persona extends Model {
+
+
+class Autor extends Model {
 
     // Constructor. Conecta con la base de datos.
     public function __construct() {
-        $this->table = "personas";
-        $this->idColumn = "idPersona";
+        $this->table = "autores";
+        $this->idColumn = "idAutor";
         parent::__construct();
     }
 

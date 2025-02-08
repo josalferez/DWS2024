@@ -1,7 +1,11 @@
 <?php
+// CONTROLADOR DE USUARIOS
+namespace Controllers;
 
-include_once "models/usuario.php";
-include_once "models/libro.php";
+use Models\Libro;
+use Views\View;
+use Models\Seguridad;
+use Models\Usuario;
 
 class UsuariosController {
 

@@ -4,8 +4,7 @@
 // No está implementado el CRUD
 // CRUD: Create, Read, Update, Delete
 
-
-include_once "model.php";
+namespace Models;
 
 class Usuario extends Model
 {

@@ -1,6 +1,10 @@
 <?php
 
+namespace Models;
+
 include_once "db.php";
+
+
 
 // MODELO GENÉRICO
 

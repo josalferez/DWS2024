@@ -1,6 +1,5 @@
 <!-- BIBLIOTECA VERSIÓN 4 (Y ÚLTIMA)
      Características de esta versión:
-       - Arquitectura MVC.
        - Modelo genérico y capa de abstracción de datos.
        - Controladores múltiples.
        - Control de acceso
@@ -11,11 +10,14 @@
 session_start();
 
 include_once "models/seguridad.php";
+require_once "autoload.php";
 
 // Hacemos include de todos los controladores
-foreach (glob("controllers/*.php") as $file) {
-    include $file;
-}
+/*foreach (glob("controllers/*.php") as $file) {
+    if (is_file($file)) {
+        require_once $file;
+    }
+}*/
 
 // Miramos el valor de la variable "controller", si existe. Si no, le asignamos un controlador por defecto
 if (isset($_REQUEST["controller"])) {

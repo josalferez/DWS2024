@@ -1,10 +1,12 @@
 <?php
 //controllers/libros_controller.php
+namespace Controllers;
 
 // CONTROLADOR DE LIBROS
-include_once("models/libro.php");  // Modelos
-include_once("models/persona.php");
-include_once("view.php");
+use Models\Libro;
+use Models\Autor;
+use Views\View;
+use Models\Seguridad;
 
 class LibrosController
 {
@@ -14,7 +16,7 @@ class LibrosController
     public function __construct()
     {
         $this->libro = new Libro();
-        $this->autor = new Persona();
+        $this->autor = new Autor();
     }
 
     // --------------------------------- MOSTRAR LISTA DE LIBROS ----------------------------------------
