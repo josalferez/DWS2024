@@ -9,15 +9,8 @@
 
 session_start();
 
-include_once "models/seguridad.php";
+require_once "models/seguridad.php";
 require_once "autoload.php";
-
-// Hacemos include de todos los controladores
-/*foreach (glob("controllers/*.php") as $file) {
-    if (is_file($file)) {
-        require_once $file;
-    }
-}*/
 
 // Miramos el valor de la variable "controller", si existe. Si no, le asignamos un controlador por defecto
 if (isset($_REQUEST["controller"])) {

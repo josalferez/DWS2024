@@ -3,7 +3,6 @@
 // MODELO DE LIBROS
 namespace models;
 
-
 class Libro extends Model
 {
 
