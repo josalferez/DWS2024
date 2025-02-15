@@ -2,7 +2,6 @@
 // CONTROLADOR DE USUARIOS
 namespace Controllers;
 
-use Models\Libro;
 use Views\View;
 use Models\Seguridad;
 use Models\Usuario;

@@ -1,7 +1,8 @@
 <?php
 
 // MODELO DE LIBROS
-namespace models;
+
+include_once "model.php";
 
 class Libro extends Model
 {
