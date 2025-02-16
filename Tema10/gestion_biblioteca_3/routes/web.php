@@ -8,9 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ApiController::class, 'welcome']);
 
 Route::get('/libros', [ApiController::class, 'index']);
 Route::post('/libros', [ApiController::class, 'store']);
